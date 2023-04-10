@@ -1,10 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Fira_Code } from "next/font/google";
 import { FaTwitter, FaGithub, FaLink } from "react-icons/fa";
 import { socialLinkData } from "@/utils/data";
-
-const firaCode = Fira_Code({ subsets: ["latin"] });
 
 export default function Header() {
   const { web, twitter, github } = socialLinkData;
@@ -19,9 +16,7 @@ export default function Header() {
             objectFit="cover"
           />
         </div>
-        <div className={`${firaCode.className} text-xl font-bold`}>
-          Color Gradient
-        </div>
+        <div className="text-xl font-bold">Color Gradient</div>
       </Link>
       <div className="flex space-x-4">
         <Link href={web} className="hover:text-white" target="_blank">
