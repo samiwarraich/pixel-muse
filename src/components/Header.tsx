@@ -9,7 +9,7 @@ const firaCode = Fira_Code({ subsets: ["latin"] });
 export default function Header() {
   const { web, twitter, github } = socialLinkData;
   return (
-    <header className="flex items-center justify-between pb-6 pr-6">
+    <header className="flex items-center justify-between pb-6 lg:pr-6">
       <Link href="/" className="flex items-center space-x-2">
         <div className="relative h-12 w-12 rounded-full overflow-hidden">
           <Image
