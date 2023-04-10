@@ -24,13 +24,13 @@ export default function Header() {
         </div>
       </Link>
       <div className="flex space-x-4">
-        <Link href={web} className="hover:text-gray-200" target="_blank">
+        <Link href={web} className="hover:text-white" target="_blank">
           <FaLink size={16} />
         </Link>
-        <Link href={twitter} className="hover:text-gray-200" target="_blank">
+        <Link href={twitter} className="hover:text-[#00acee]" target="_blank">
           <FaTwitter size={16} />
         </Link>
-        <Link href={github} className="hover:text-gray-200" target="_blank">
+        <Link href={github} className="hover:text-black" target="_blank">
           <FaGithub size={16} />
         </Link>
       </div>
