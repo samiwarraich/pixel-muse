@@ -13,7 +13,7 @@ export default function Card({
   description,
 }: IBotData) {
   return (
-    <div className="max-w-sm rounded overflow-hidden shadow-lg border-2 border-line border-gray-700">
+    <div className="max-w-sm rounded overflow-hidden shadow-lg border-1 border-line">
       <Link target="_blank" href={url}>
         <div className="relative h-48 w-full">
           <Image
