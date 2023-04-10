@@ -1,10 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
 import { FaTwitter, FaGithub, FaLink } from "react-icons/fa";
-import { socialLinkData } from "@/utils/data";
+import { ISocialLinks } from "@/types";
 
-export default function Header() {
-  const { web, twitter, github } = socialLinkData;
+export default function Header({ socialLinks }: { socialLinks: ISocialLinks }) {
+  const { web, twitter, github } = socialLinks;
   return (
     <header className="flex items-center justify-between pb-6 lg:pr-6">
       <Link href="/" className="flex items-center space-x-2">

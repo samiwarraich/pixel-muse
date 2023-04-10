@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { IBotData } from "@/utils/data";
+import { IBots } from "@/types";
 
 export default function CardItem({
   title,
@@ -8,7 +8,7 @@ export default function CardItem({
   url,
   image,
   description,
-}: IBotData) {
+}: IBots) {
   return (
     <div className="max-w-sm rounded overflow-hidden shadow-lg border-1 border-line">
       <Link target="_blank" href={url}>
