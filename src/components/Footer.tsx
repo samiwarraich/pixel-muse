@@ -1,9 +1,9 @@
-export default function Footer() {
+import { IFooter } from "@/types";
+
+export default function Footer({ footer }: { footer: IFooter }) {
   return (
     <footer className="px-4 py-8">
-      <div className="container mx-auto text-center">
-        &copy; 2023 All rights reserved.
-      </div>
+      <div className="container mx-auto text-center">{footer?.text}</div>
     </footer>
   );
 }

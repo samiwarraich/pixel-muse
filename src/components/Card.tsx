@@ -1,19 +1,22 @@
 import CardItem from "./CardItem";
-import { IBots } from "@/types";
+import { IBot } from "@/types";
 
-export default function Card({ data }: { data: IBots[] }) {
+export default function Card({ data }: { data: IBot[] }) {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-      {data.map(({ title, username, url, image, description }, index) => (
-        <CardItem
-          key={index}
-          title={title}
-          username={username}
-          url={url}
-          image={image}
-          description={description}
-        />
-      ))}
+      {data.map(
+        ({ title, username, url, image, imageAlt, description }, index) => (
+          <CardItem
+            key={index}
+            title={title}
+            username={username}
+            url={url}
+            image={image}
+            imageAlt={imageAlt}
+            description={description}
+          />
+        )
+      )}
     </div>
   );
 }

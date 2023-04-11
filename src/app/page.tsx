@@ -1,19 +1,21 @@
-import { getAll } from "@vercel/edge-config";
 import { Header, Card, Footer } from "@/components";
-import { IBots, ISocialLinks } from "@/types";
-
-interface IEdgeConfig {
-  bots: IBots[];
-  socialLinks: ISocialLinks;
-}
+import { getData } from "@/utils/getData";
 
 export default async function Home() {
-  const { bots, socialLinks }: IEdgeConfig = (await getAll()) as IEdgeConfig;
+  const result = await getData();
+  if ("error" in result) {
+    return (
+      <div className="flex justify-center items-center h-screen text-xl">
+        {result.error}
+      </div>
+    );
+  }
+  const { header, bots, footer } = result;
   return (
     <div className="container mx-auto p-4">
-      <Header socialLinks={socialLinks} />
-      <Card data={bots} />
-      <Footer />
+      {header?.title && header?.logo && <Header header={header} />}
+      {bots?.length && <Card data={bots} />}
+      {footer?.text && <Footer footer={footer} />}
     </div>
   );
 }

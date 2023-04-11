@@ -1,18 +1,48 @@
-interface IBots {
+interface ISocialLink {
+  url: string;
+  color: string;
+  icon: string;
+  size: string;
+}
+
+interface IHeader {
+  logo: string;
+  logoAlt: string;
+  title: string;
+  socialLinks: ISocialLink[];
+}
+
+interface IBot {
   title: string;
   username: string;
   url: string;
   image: string;
+  imageAlt: string;
   description: string;
 }
 
-interface ISocialLinks {
-  web: string;
-  twitter: string;
-  github: string;
+interface IFooter {
+  text: string;
 }
 
-export { type IBots, type ISocialLinks };
+interface IEdgeConfig {
+  header: IHeader;
+  bots: IBot[];
+  footer: IFooter;
+}
+
+interface Error {
+  error: string;
+}
+
+export {
+  type ISocialLink,
+  type IHeader,
+  type IBot,
+  type IFooter,
+  type IEdgeConfig,
+  type Error,
+};
 
 // description
 // Developed and maintained a suite of bots for generating and sharing random gradient color images on Twitter and Telegram platforms.

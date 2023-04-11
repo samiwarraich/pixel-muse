@@ -7,4 +7,9 @@ module.exports = {
   ],
   theme: {},
   plugins: [],
+  safelist: [
+    "hover:text-[#ffffff]",
+    "hover:text-[#00acee]",
+    "hover:text-[#000000]",
+  ],
 };
