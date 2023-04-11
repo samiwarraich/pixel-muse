@@ -1,8 +1,8 @@
 import { Header, Card, Footer } from "@/components";
-import { getData } from "@/utils/getData";
+import { getConfig } from "@/service/getConfig";
 
 export default async function Home() {
-  const result = await getData();
+  const result = await getConfig();
   if ("error" in result) {
     return (
       <div className="flex justify-center items-center h-screen text-xl">
