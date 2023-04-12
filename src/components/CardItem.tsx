@@ -13,7 +13,7 @@ export default function CardItem({
   return (
     <div className="max-w-sm rounded overflow-hidden shadow-lg border-1 border-line">
       <Link target="_blank" href={url}>
-        <div className="relative h-48 w-full">
+        <div className="relative h-52 w-full">
           <Image src={image} alt={imageAlt} layout="fill" objectFit="cover" />
         </div>
         <div className="px-6 py-4">
