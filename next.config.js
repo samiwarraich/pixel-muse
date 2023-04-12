@@ -10,6 +10,7 @@ const nextConfig = {
     });
     return config;
   },
+  staticPageGenerationTimeout: 1000,
 };
 
 module.exports = nextConfig;
