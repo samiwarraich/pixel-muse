@@ -52,6 +52,6 @@ export {
   type IRandomImage,
 };
 
-// description
+// description for port
 // Developed and maintained a suite of bots for generating and sharing random gradient color images on Twitter and Telegram platforms.
 // Implemented features such as daily tweets, message responses, group mentions, and channel posts
