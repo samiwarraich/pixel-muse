@@ -21,7 +21,7 @@ export default function ImageCard({
       const { shape, name } = getRandomShape();
       const { image, topColor, bottomColor } = getRandomImage(shape);
       setData({ name, image, topColor, bottomColor });
-    }, 60 * 100);
+    }, 60 * 1000);
 
     return () => clearInterval(interval);
   }, []);
