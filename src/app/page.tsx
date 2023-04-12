@@ -1,9 +1,8 @@
 import { Header, Card, Footer } from "@/components";
-import { getConfig, getImage } from "@/service";
+import { getConfig } from "@/service";
 
 export default async function Home() {
   const result = await getConfig();
-  const randomImage = await getImage();
   if ("error" in result) {
     return (
       <div className="flex justify-center items-center h-screen text-xl">
@@ -15,7 +14,7 @@ export default async function Home() {
   return (
     <div className="container mx-auto p-4">
       {header?.title && header?.logo && <Header header={header} />}
-      {bots?.length && <Card data={bots} randomImage={randomImage} />}
+      {bots?.length && <Card data={bots} />}
       {footer?.text && <Footer footer={footer} />}
     </div>
   );

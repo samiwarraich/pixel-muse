@@ -35,13 +35,6 @@ interface Error {
   error: string;
 }
 
-interface IRandomImage {
-  name: string;
-  image: string;
-  topColor: string;
-  bottomColor: string;
-}
-
 export {
   type ISocialLink,
   type IHeader,
@@ -49,7 +42,6 @@ export {
   type IFooter,
   type IEdgeConfig,
   type Error,
-  type IRandomImage,
 };
 
 // description for port

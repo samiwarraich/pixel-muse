@@ -5,7 +5,13 @@ module.exports = {
     "./src/components/**/*.{js,ts,jsx,tsx}",
     "./src/app/**/*.{js,ts,jsx,tsx}",
   ],
-  theme: {},
+  theme: {
+    extend: {
+      fontFamily: {
+        fira: ["var(--font-firaCode)"],
+      },
+    },
+  },
   plugins: [],
   safelist: [
     "hover:text-[#ffffff]",

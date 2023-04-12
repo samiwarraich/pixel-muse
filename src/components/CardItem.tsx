@@ -18,7 +18,7 @@ export default function CardItem({
         </div>
         <div className="px-6 py-4">
           <div className="font-bold text-xl mb-2">{title}</div>
-          <div className="text-sm mb-2">{username}</div>
+          <div className="font-medium text-sm mb-2">{username}</div>
           <p className="text-sm">{description}</p>
         </div>
       </Link>
