@@ -1,5 +1,5 @@
 import { Header, Card, Footer } from "@/components";
-import { getConfig } from "@/service";
+import { getConfig } from "@/services";
 
 export default async function Home() {
   const result = await getConfig();
