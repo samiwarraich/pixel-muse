@@ -12,6 +12,6 @@ export async function getConfig(): Promise<IEdgeConfig | Error> {
     return { header, bots, footer };
   } catch (error) {
     console.error(error);
-    return { error: "Some thing went wrong!🙁" };
+    return { error: "Some thing went wrong! 🙁" };
   }
 }
