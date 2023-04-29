@@ -1,6 +1,6 @@
-import { IEdgeConfig, Error } from "@/types";
+import { IConfig, IError } from "@/types";
 
-export async function getConfig(): Promise<IEdgeConfig | Error> {
+export async function getConfig(): Promise<IConfig | IError> {
   try {
     const res = await fetch(process.env.EDGE_CONFIG as string, {
       next: {

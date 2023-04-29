@@ -25,13 +25,13 @@ interface IFooter {
   text: string;
 }
 
-interface IEdgeConfig {
+interface IConfig {
   header: IHeader;
   bots: IBot[];
   footer: IFooter;
 }
 
-interface Error {
+interface IError {
   error: string;
 }
 
@@ -40,6 +40,6 @@ export {
   type IHeader,
   type IBot,
   type IFooter,
-  type IEdgeConfig,
-  type Error,
+  type IConfig,
+  type IError,
 };
