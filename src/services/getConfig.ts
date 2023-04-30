@@ -7,9 +7,8 @@ export async function getConfig(): Promise<IConfig | IError> {
         revalidate: 1,
       },
     });
-    const json = await res.json();
-    const { header, bots, footer } = json.items;
-    return { header, bots, footer };
+    const { items } = await res.json();
+    return items;
   } catch (error) {
     console.error(error);
     return { error: "Some thing went wrong! 🙁" };
