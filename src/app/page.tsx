@@ -1,4 +1,4 @@
-import { Header, Card, Footer } from "@/components";
+import { Card } from "@/components";
 import { getConfig } from "@/services";
 
 export default async function Home() {
@@ -10,12 +10,6 @@ export default async function Home() {
       </div>
     );
   }
-  const { header, bots, footer } = res;
-  return (
-    <div className="container mx-auto p-4">
-      {header?.title && header?.logo && <Header header={header} />}
-      {bots?.length && <Card data={bots} />}
-      {footer?.text && <Footer footer={footer} />}
-    </div>
-  );
+
+  return <Card data={res.bots} />;
 }

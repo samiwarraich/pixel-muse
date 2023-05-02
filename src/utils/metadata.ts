@@ -51,4 +51,5 @@ export const metaData: Metadata = {
     { rel: "icon", sizes: "32x32", url: "./images/favicon.png" },
     { rel: "icon", sizes: "16x16", url: "./images/favicon.png" },
   ],
+  viewport: "width=device-width, initial-scale=1.0",
 };

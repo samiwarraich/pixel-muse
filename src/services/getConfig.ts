@@ -8,6 +8,7 @@ export async function getConfig(): Promise<IConfig | IError> {
       },
     });
     const { items } = await res.json();
+    if (!items?.bots?.length) throw new Error();
     return items;
   } catch (error) {
     console.error(error);
