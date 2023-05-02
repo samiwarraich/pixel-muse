@@ -39,6 +39,8 @@ export const metaData: Metadata = {
     "gradient generator",
     "help with color management in windows",
     "hex color",
+    "samiwarraich",
+    "Sami Warraich",
   ],
   other: {
     "google-site-verification": "hztt4vcG42duVjOSpid_W9ugB5xznC01VRcutNPlBpI",
