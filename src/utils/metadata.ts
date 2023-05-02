@@ -46,4 +46,9 @@ export const metaData: Metadata = {
     "google-site-verification": "hztt4vcG42duVjOSpid_W9ugB5xznC01VRcutNPlBpI",
     "msvalidate.01": "DD992E9CC85A0E458EA3599D0526C78A",
   },
+  icons: [
+    { rel: "apple-touch-icon", sizes: "120x120", url: "./images/favicon.png" },
+    { rel: "icon", sizes: "32x32", url: "./images/favicon.png" },
+    { rel: "icon", sizes: "16x16", url: "./images/favicon.png" },
+  ],
 };
