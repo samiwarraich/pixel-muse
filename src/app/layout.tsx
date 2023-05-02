@@ -36,6 +36,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${firaCode.variable} font-fira`}>
+      <head>
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="robots" content="all" />
+        <meta
+          name="google-site-verification"
+          content="hztt4vcG42duVjOSpid_W9ugB5xznC01VRcutNPlBpI"
+        />
+        <meta name="msvalidate.01" content="DD992E9CC85A0E458EA3599D0526C78A" />
+      </head>
       <body>{children}</body>
     </html>
   );
