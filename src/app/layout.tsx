@@ -3,7 +3,27 @@ import localFont from "@next/font/local";
 
 export const metadata = {
   title: "Color Gradient",
-  description: "Color Gradient",
+  description:
+    "Color Gradient is a suite of bots that create and share gradient color images on Twitter and Telegram platforms. You can enjoy these beautiful images every day by following the bots on social media or requesting them via messages or mentions.",
+  twitter: {
+    card: "summary_large_image",
+    site: "@gradient_bot",
+    creator: "@samiwarraich2",
+    images: "https://colorgradient.vercel.app/images/color-gradient-bot.jpg",
+  },
+  openGraph: {
+    type: "website",
+    url: "https://colorgradient.vercel.app",
+    title: "Color Gradient",
+    description:
+      "Color Gradient is a suite of bots that create and share gradient color images on Twitter and Telegram platforms. You can enjoy these beautiful images every day by following the bots on social media or requesting them via messages or mentions.",
+    siteName: "Color Gradient",
+    images: [
+      {
+        url: "https://colorgradient.vercel.app/images/color-gradient-bot.jpg",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
