@@ -14,7 +14,13 @@ export default function CardItem({
     <div className="max-w-sm rounded overflow-hidden shadow-lg border-1 border-line">
       <Link target="_blank" href={url}>
         <div className="relative h-52 w-full">
-          <Image src={image} alt={imageAlt} layout="fill" objectFit="cover" />
+          <Image
+            src={image}
+            alt={imageAlt}
+            layout="fill"
+            objectFit="cover"
+            priority
+          />
         </div>
         <div className="px-6 py-4">
           <div className="font-bold text-xl mb-2">{title}</div>

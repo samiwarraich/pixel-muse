@@ -9,7 +9,13 @@ export default function Header({ header }: { header: IHeader }) {
     <header className="flex items-center justify-between pb-6 lg:pr-6">
       <Link href="/" className="flex items-center space-x-2">
         <div className="relative h-12 w-12 rounded-full overflow-hidden">
-          <Image src={logo} alt={logoAlt} layout="fill" objectFit="cover" />
+          <Image
+            src={logo}
+            alt={logoAlt}
+            layout="fill"
+            objectFit="cover"
+            priority
+          />
         </div>
         <div className="text-xl font-bold">{title}</div>
       </Link>
