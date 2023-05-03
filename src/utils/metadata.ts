@@ -52,4 +52,5 @@ export const metaData: Metadata = {
     { rel: "icon", sizes: "16x16", url: "./images/favicon.png" },
   ],
   viewport: "width=device-width, initial-scale=1.0",
+  authors: [{ name: "Sami Warraich", url: "https://samiwarraich.github.io" }],
 };
