@@ -11,5 +11,9 @@ export default async function Home() {
     );
   }
 
-  return <Card data={res.bots} />;
+  return (
+    <div className="flex justify-around">
+      <Card data={res.bots} />
+    </div>
+  );
 }
