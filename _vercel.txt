@@ -1,0 +1,1 @@
+vc-domain-verify=color-gradient.vercel.io,753e383a1a8532168092
