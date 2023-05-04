@@ -1,8 +1,8 @@
 import "./globals.css";
 import { Header, Footer } from "@/components";
-import { firaCode, metaData } from "@/utils";
+import { firaCode } from "@/utils";
 
-export const metadata = metaData;
+export { metadata } from "@/utils";
 
 export default function RootLayout({
   children,
