@@ -1,7 +1,5 @@
-"use client";
 import Image from "next/image";
 import Link from "next/link";
-import va from "@vercel/analytics";
 import { IBot } from "@/types";
 
 export default function CardItem({
@@ -14,13 +12,7 @@ export default function CardItem({
 }: IBot) {
   return (
     <div className="max-w-sm rounded overflow-hidden shadow-lg border-1 border-line">
-      <Link
-        target="_blank"
-        href={url}
-        onClick={() => {
-          va.track("Click", { username });
-        }}
-      >
+      <Link target="_blank" href={url}>
         <div className="relative h-52 w-full">
           <Image
             src={image}
