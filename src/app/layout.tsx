@@ -1,4 +1,5 @@
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/react";
 import { Header, Footer } from "@/components";
 import { firaCode } from "@/utils";
 
@@ -15,6 +16,7 @@ export default function RootLayout({
         <div className="container mx-auto m-4">
           <Header />
           {children}
+          <Analytics />
           <Footer />
         </div>
       </body>
