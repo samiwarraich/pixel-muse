@@ -3,7 +3,7 @@ interface IBot {
   username: string;
   url: string;
   image: string;
-  imageAlt: string;
+  alt: string;
   description: string;
 }
 

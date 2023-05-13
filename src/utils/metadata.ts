@@ -4,6 +4,7 @@ export const metadata: Metadata = {
   title: "Color Gradient",
   description:
     "Color Gradient is a suite of bots that create and share gradient color images on Twitter and Telegram platforms. You can enjoy these beautiful images every day by following the bots on social media or requesting them via messages or mentions.",
+  metadataBase: new URL("https://colorgradient.vercel.app"),
   twitter: {
     card: "summary_large_image",
     title: "Color Gradient",
@@ -11,7 +12,7 @@ export const metadata: Metadata = {
       "Color Gradient is a suite of bots that create and share gradient color images on Twitter and Telegram platforms. You can enjoy these beautiful images every day by following the bots on social media or requesting them via messages or mentions.",
     site: "@gradient_bot",
     creator: "@samiwarraich2",
-    images: "https://colorgradient.vercel.app/images/color-gradient-bot.jpg",
+    images: "/images/color-gradient-bot.jpg",
   },
   openGraph: {
     type: "website",
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
     siteName: "Color Gradient",
     images: [
       {
-        url: "https://colorgradient.vercel.app/images/color-gradient-bot.jpg",
+        url: "/images/color-gradient-bot.jpg",
       },
     ],
   },
@@ -48,8 +49,18 @@ export const metadata: Metadata = {
   },
   icons: [
     { rel: "apple-touch-icon", sizes: "120x120", url: "./images/favicon.png" },
-    { rel: "icon", sizes: "32x32", url: "./images/favicon.png" },
-    { rel: "icon", sizes: "16x16", url: "./images/favicon.png" },
+    {
+      rel: "icon",
+      sizes: "32x32",
+      type: "image/png",
+      url: "./images/favicon.png",
+    },
+    {
+      rel: "icon",
+      sizes: "16x16",
+      type: "image/png",
+      url: "./images/favicon.png",
+    },
   ],
   viewport: "width=device-width, initial-scale=1.0",
   authors: [{ name: "Sami Warraich", url: "https://samiwarraich.github.io" }],

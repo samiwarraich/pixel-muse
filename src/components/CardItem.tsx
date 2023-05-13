@@ -7,7 +7,7 @@ export default function CardItem({
   username,
   url,
   image,
-  imageAlt,
+  alt,
   description,
 }: IBot) {
   return (
@@ -16,7 +16,7 @@ export default function CardItem({
         <div className="relative h-52 w-full">
           <Image
             src={image}
-            alt={imageAlt}
+            alt={alt}
             layout="fill"
             objectFit="cover"
             priority
