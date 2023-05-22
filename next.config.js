@@ -4,7 +4,7 @@ const nextConfig = {
     appDir: true,
   },
   images: {
-    domains: ["colorgradient.vercel.app"],
+    domains: ["pixel-muse.vercel.app"],
   },
 };
 
