@@ -8,14 +8,14 @@ export default function Header() {
       <Link href="/" className="flex items-center space-x-2">
         <div className="relative h-12 w-12 rounded-full overflow-hidden">
           <Image
-            src="/images/color-gradient-bot.jpg"
-            alt="color gradient bot"
+            src="/images/pixel-muse-bot.jpeg"
+            alt="pixel muse bot"
             layout="fill"
             objectFit="cover"
             priority
           />
         </div>
-        <div className="text-xl font-bold">Color Gradient</div>
+        <div className="text-xl font-bold">Pixel Muse</div>
       </Link>
       <div className="flex space-x-4">
         <Link
