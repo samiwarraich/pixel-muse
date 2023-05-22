@@ -21,21 +21,21 @@ export default function Header() {
         <Link
           href="https://samiwarraich.github.io"
           target="_blank"
-          className={`hover:text-[#ffffff]`}
+          className={`hover:text-[#ffffff] transition-transform duration-200 hover:shadow-xl hover:-translate-y-1 focus-within:shadow-xl focus-within:-translate-y-1`}
         >
           <FaLink size={16} />
         </Link>
         <Link
           href="https://twitter.com/samiwarraich2"
           target="_blank"
-          className={`hover:text-[#00acee]`}
+          className={`hover:text-[#00acee] transition-transform duration-200 hover:shadow-xl hover:-translate-y-1 focus-within:shadow-xl focus-within:-translate-y-1`}
         >
           <FaTwitter size={16} />
         </Link>
         <Link
           href="https://github.com/samiwarraich"
           target="_blank"
-          className={`hover:text-[#000000]`}
+          className={`hover:text-[#000000] transition-transform duration-200 hover:shadow-xl hover:-translate-y-1 focus-within:shadow-xl focus-within:-translate-y-1`}
         >
           <FaGithub size={16} />
         </Link>
