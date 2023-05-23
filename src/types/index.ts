@@ -11,8 +11,14 @@ interface IConfig {
   bots: IBot[];
 }
 
+interface IPhoto {
+  url: string;
+  firstColor: string;
+  secondColor: string;
+}
+
 interface IError {
   error: string;
 }
 
-export { type IBot, type IConfig, type IError };
+export { type IBot, type IConfig, type IPhoto, type IError };
