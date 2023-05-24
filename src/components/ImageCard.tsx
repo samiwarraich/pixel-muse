@@ -1,23 +1,14 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { IError, IPhoto } from "@/types";
 import Image from "next/image";
 import { FiDownload, FiRefreshCw } from "react-icons/fi";
 import { getPhoto } from "@/services";
 
 export default function ImageItem({ photo }: { photo: IPhoto | IError }) {
-  const [imgUrl, setImgUrl] = useState("");
+  const [imgUrl, setImgUrl] = useState("image" in photo ? photo.image : "");
   const [error, setError] = useState("");
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    if ("image" in photo) {
-      setImgUrl(photo?.image);
-    } else {
-      setError(photo?.error);
-    }
-    setIsLoading(false);
-  }, [photo]);
+  const [isLoading, setIsLoading] = useState(false);
 
   const onDownload = () => {
     downloadImage(imgUrl);
