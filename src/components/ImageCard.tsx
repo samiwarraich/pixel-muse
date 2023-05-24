@@ -61,16 +61,24 @@ export default function ImageItem({ photo }: { photo: IPhoto | IError }) {
         )}
       </div>
       <div className="px-6 py-4 flex justify-between">
-        <FiDownload
-          size={24}
+        <button
           onClick={onDownload}
-          className="transition-transform duration-200 hover:shadow-xl hover:-translate-y-1 focus-within:shadow-xl focus-within:-translate-y-1 focus:outline-none cursor-pointer"
-        />
-        <FiRefreshCw
-          size={24}
+          disabled={error ? true : false}
+          className={`transition-transform duration-200 hover:shadow-xl hover:-translate-y-1 focus-within:shadow-xl focus-within:-translate-y-1 focus:outline-none cursor-pointer ${
+            error ? "opacity-50" : ""
+          }`}
+        >
+          <FiDownload size={24} />
+        </button>
+        <button
           onClick={onReload}
-          className="transition-transform duration-200 hover:shadow-xl hover:-translate-y-1 focus-within:shadow-xl focus-within:-translate-y-1 focus:outline-none cursor-pointer"
-        />
+          disabled={isLoading}
+          className={`transition-transform duration-200 hover:shadow-xl hover:-translate-y-1 focus-within:shadow-xl focus-within:-translate-y-1 focus:outline-none cursor-pointer ${
+            isLoading ? "opacity-50" : ""
+          }`}
+        >
+          <FiRefreshCw size={24} />
+        </button>
       </div>
     </div>
   );
