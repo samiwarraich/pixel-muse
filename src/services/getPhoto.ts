@@ -19,7 +19,6 @@ export async function getPhoto(isClient?: Boolean): Promise<IPhoto | IError> {
       },
     });
     const { image, firstColor, secondColor } = await res.json();
-    console.log({ firstColor });
     return { image, firstColor, secondColor };
   } catch (error) {
     console.error(error);
