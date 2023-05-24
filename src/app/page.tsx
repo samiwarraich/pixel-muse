@@ -11,17 +11,9 @@ export default async function Home() {
       </div>
     );
   }
-  if ("error" in photo) {
-    return (
-      <div className="flex justify-center items-center h-screen text-xl">
-        {photo.error}
-      </div>
-    );
-  }
-
   return (
     <div className="flex justify-around">
-      <Card data={res.bots} imageUrl={photo.url} />
+      <Card data={res.bots} photo={photo} />
     </div>
   );
 }

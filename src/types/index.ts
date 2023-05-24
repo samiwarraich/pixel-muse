@@ -12,7 +12,7 @@ interface IConfig {
 }
 
 interface IPhoto {
-  url: string;
+  image: string;
   firstColor: string;
   secondColor: string;
 }

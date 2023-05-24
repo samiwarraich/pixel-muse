@@ -1,19 +1,26 @@
 import { IPhoto, IError } from "@/types";
 
-export async function getPhoto(): Promise<IPhoto | IError> {
+export async function getPhoto(isClient?: Boolean): Promise<IPhoto | IError> {
+  const url: string = isClient
+    ? (process.env.NEXT_PUBLIC_BOT_URL as string)
+    : (process.env.BOT_URL as string);
+  const hash: string = isClient
+    ? (process.env.NEXT_PUBLIC_WEB_HASH as string)
+    : (process.env.WEB_HASH as string);
   try {
-    const res = await fetch(process.env.BOT_URL as string, {
+    const res = await fetch(url, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
-        "web-hash": process.env.WEB_HASH as string,
+        "web-hash": hash,
       },
       next: {
         revalidate: 1,
       },
     });
-    const { url, firstColor, secondColor } = await res.json();
-    return { url, firstColor, secondColor };
+    const { image, firstColor, secondColor } = await res.json();
+    console.log({ firstColor });
+    return { image, firstColor, secondColor };
   } catch (error) {
     console.error(error);
     return { error: "Some thing went wrong! 🙁" };
