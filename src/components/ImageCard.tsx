@@ -7,7 +7,7 @@ import { getPhoto } from "@/services";
 
 export default function ImageItem({ photo }: { photo: IPhoto | IError }) {
   const [imgUrl, setImgUrl] = useState("image" in photo ? photo.image : "");
-  const [error, setError] = useState("");
+  const [error, setError] = useState("error" in photo ? photo.error : "");
   const [isLoading, setIsLoading] = useState(false);
 
   const onDownload = () => {
