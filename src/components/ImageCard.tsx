@@ -40,7 +40,7 @@ export default function ImageItem({ photo }: { photo: IPhoto | IError }) {
   }
 
   return (
-    <div className="max-w-sm rounded overflow-hidden shadow-lg border-1 border-line ">
+    <div className="max-w-sm rounded overflow-hidden shadow-lg border-1 border-line">
       <div className="relative h-80 w-full">
         {isLoading ? (
           <div className="flex items-center justify-center h-full">
@@ -64,8 +64,10 @@ export default function ImageItem({ photo }: { photo: IPhoto | IError }) {
         <button
           onClick={onDownload}
           disabled={error ? true : false}
-          className={`transition-transform duration-200 hover:shadow-xl hover:-translate-y-1 focus-within:shadow-xl focus-within:-translate-y-1 focus:outline-none cursor-pointer ${
-            error ? "opacity-50" : ""
+          className={`${
+            error
+              ? "opacity-50"
+              : "transition-transform duration-200 hover:shadow-xl hover:-translate-y-1 focus-within:shadow-xl focus-within:-translate-y-1 focus:outline-none cursor-pointer"
           }`}
         >
           <FiDownload size={24} />
