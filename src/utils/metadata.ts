@@ -35,6 +35,7 @@ export const metadata: Metadata = {
     "pixel",
     "pixel art",
     "random pixel",
+    "random pixel art",
     "pixel muse",
     "pixel bot",
     "pixel muse bot",
