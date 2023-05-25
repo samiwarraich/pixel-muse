@@ -63,9 +63,9 @@ export default function ImageItem({ photo }: { photo: IPhoto | IError }) {
       <div className="px-6 py-4 flex justify-between">
         <button
           onClick={onDownload}
-          disabled={error ? true : false}
+          disabled={error || isLoading ? true : false}
           className={`${
-            error
+            error || isLoading
               ? "opacity-50"
               : "transition-transform duration-200 hover:shadow-xl hover:-translate-y-1 focus-within:shadow-xl focus-within:-translate-y-1 focus:outline-none cursor-pointer"
           }`}

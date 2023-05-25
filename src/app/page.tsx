@@ -12,7 +12,7 @@ export default async function Home() {
     );
   }
   return (
-    <div className="flex justify-start">
+    <div className="flex justify-between">
       <Card data={res} photo={photo} />
     </div>
   );
