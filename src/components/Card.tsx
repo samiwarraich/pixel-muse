@@ -1,6 +1,7 @@
-import ImageCard from "./ImageCard";
-import CardItem from "./CardItem";
+import { ImageCard } from "@/components";
+import { CardItem } from "@/components";
 import { IConfig, IError, IPhoto } from "@/types";
+import { ErrorMsg } from "@/components";
 
 export default function Card({
   data,
@@ -9,18 +10,13 @@ export default function Card({
   data: IConfig | IError;
   photo: IPhoto | IError;
 }) {
+  const isError = "error" in data;
   return (
     <div className="min-h-screen w-full">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mx-4">
         <ImageCard photo={photo} />
-        {"error" in data ? (
-          <div className="max-w-sm rounded overflow-hidden shadow-lg border-1 border-line">
-            <div className="relative h-80 w-full">
-              <div className="flex items-center justify-center h-full">
-                <p>{data?.error}</p>
-              </div>
-            </div>
-          </div>
+        {isError ? (
+          <ErrorMsg name="card" message={data.error} />
         ) : (
           data.bots.map(
             ({ title, username, url, image, alt, description }, index) => (
