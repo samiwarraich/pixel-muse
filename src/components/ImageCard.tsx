@@ -7,7 +7,11 @@ import { ErrorMsg, Loader } from "@/components";
 import { getPhoto } from "@/services";
 import { IError, IPhoto } from "@/types";
 
-export default function ImageItem({ photo }: { photo: IPhoto | IError }) {
+interface ImageItemProps {
+  photo: IPhoto | IError;
+}
+
+const ImageItem = ({ photo }: ImageItemProps) => {
   const [imgUrl, setImgUrl] = useState("image" in photo ? photo.image : "");
   const [error, setError] = useState("error" in photo ? photo.error : "");
   const [isLoading, setIsLoading] = useState(false);
@@ -29,8 +33,10 @@ export default function ImageItem({ photo }: { photo: IPhoto | IError }) {
     setIsLoading(false);
   };
 
+  const isDisabled = !!error || isLoading;
+
   return (
-    <div className="max-w-sm rounded overflow-hidden shadow-lg border-1 border-line  backdrop-brightness-125">
+    <div className="max-w-sm rounded overflow-hidden shadow-lg border-1 border-line backdrop-brightness-125">
       <div className="relative h-80 w-full">
         {isLoading ? (
           <Loader />
@@ -49,9 +55,9 @@ export default function ImageItem({ photo }: { photo: IPhoto | IError }) {
       <div className="px-6 py-4 flex justify-between">
         <button
           onClick={onDownload}
-          disabled={error || isLoading ? true : false}
+          disabled={isDisabled}
           className={
-            error || isLoading
+            isDisabled
               ? "opacity-50"
               : "transition-transform duration-200 hover:shadow-xl hover:-translate-y-1 focus-within:shadow-xl focus-within:-translate-y-1 focus:outline-none cursor-pointer"
           }
@@ -72,4 +78,6 @@ export default function ImageItem({ photo }: { photo: IPhoto | IError }) {
       </div>
     </div>
   );
-}
+};
+
+export default ImageItem;

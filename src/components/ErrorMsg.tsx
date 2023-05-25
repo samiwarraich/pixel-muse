@@ -1,35 +1,32 @@
-export default function ErrorMsg({
-  name,
-  message,
-}: {
+interface ErrorMsgProps {
   name: string;
   message: string;
-}) {
+}
+
+const ErrorMsg = ({ name, message }: ErrorMsgProps) => {
   if (!name || !message) return null;
-  if (name === "image") {
-    return (
-      <div className="flex items-center justify-center h-full">
-        <p>{message}</p>
-      </div>
-    );
-  }
-  if (name === "boundary") {
-    return (
-      <div className="flex justify-center items-center h-screen text-xl">
-        {message}
-      </div>
-    );
-  }
-  if (name === "card") {
-    return (
-      <div className="max-w-sm rounded overflow-hidden shadow-lg border-1 border-line  backdrop-brightness-125">
+
+  const styles: { [key: string]: string } = {
+    image: "flex items-center justify-center h-full",
+    boundary: "flex justify-center items-center h-screen text-xl",
+    card: "max-w-sm rounded overflow-hidden shadow-lg border-1 border-line backdrop-brightness-125",
+  };
+
+  const style = styles[name];
+
+  return (
+    <div className={style}>
+      {name === "card" ? (
         <div className="relative h-80 w-full">
           <div className="flex items-center justify-center h-full">
             <p>{message}</p>
           </div>
         </div>
-      </div>
-    );
-  }
-  return null;
-}
+      ) : (
+        <p>{message}</p>
+      )}
+    </div>
+  );
+};
+
+export default ErrorMsg;

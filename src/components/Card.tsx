@@ -3,13 +3,12 @@ import { CardItem } from "@/components";
 import { IConfig, IError, IPhoto } from "@/types";
 import { ErrorMsg } from "@/components";
 
-export default function Card({
-  data,
-  photo,
-}: {
+interface CardProps {
   data: IConfig | IError;
   photo: IPhoto | IError;
-}) {
+}
+
+const Card = ({ data, photo }: CardProps) => {
   const isError = "error" in data;
   return (
     <div className="min-h-screen w-full">
@@ -35,4 +34,6 @@ export default function Card({
       </div>
     </div>
   );
-}
+};
+
+export default Card;
