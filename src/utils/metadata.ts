@@ -27,7 +27,7 @@ export const metadata: Metadata = {
       },
     ],
   },
-  robots: "index, follow",
+  robots: "all",
   keywords: [
     "colors",
     "colour",
