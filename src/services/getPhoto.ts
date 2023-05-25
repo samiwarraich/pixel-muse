@@ -22,6 +22,6 @@ export async function getPhoto(isClient?: Boolean): Promise<IPhoto | IError> {
     return { image, firstColor, secondColor };
   } catch (error) {
     console.error(error);
-    return { error: "Some thing went wrong! 🙁" };
+    return { error: "Something went wrong! 🙁" };
   }
 }

@@ -12,6 +12,6 @@ export async function getConfig(): Promise<IConfig | IError> {
     return items;
   } catch (error) {
     console.error(error);
-    return { error: "Some thing went wrong! 🙁" };
+    return { error: "Something went wrong! 🙁" };
   }
 }
