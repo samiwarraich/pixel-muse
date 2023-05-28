@@ -17,8 +17,8 @@ interface Photo {
   secondColor: string;
 }
 
-interface Error {
+interface ErrorData {
   error: string;
 }
 
-export { type Bot, type Config, type Photo, type Error };
+export { type Bot, type Config, type Photo, type ErrorData };
