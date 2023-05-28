@@ -79,7 +79,6 @@ const ImageItem = ({ photo }: ImageItemProps) => {
       setError(photo.error);
     }
     setIsLoading(false);
-    setIsColorChanged(false);
   };
 
   const isDisabled = !!error || isLoading;
