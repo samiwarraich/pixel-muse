@@ -15,11 +15,12 @@ const ColorPickerIcon = ({
     <div
       className={
         isDisabled
-          ? ""
+          ? "w-7 h-7 rounded-full border-2 border-custom"
           : "w-7 h-7 rounded-full border-2 border-custom transition-transform duration-200 hover:shadow-xl hover:-translate-y-1 focus-within:shadow-xl focus-within:-translate-y-1 focus:outline-none cursor-pointer"
       }
       style={{
         backgroundColor: color,
+        filter: isDisabled ? "brightness(50%)" : "",
       }}
       onClick={() => toggle(picker)}
     />
