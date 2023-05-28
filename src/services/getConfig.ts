@@ -1,6 +1,6 @@
-import { Config, ErrorData } from "@/types";
+import { Config, Error } from "@/types";
 
-export async function getConfig(): Promise<Config | ErrorData> {
+export async function getConfig(): Promise<Config | Error> {
   try {
     const res = await fetch(process.env.EDGE_CONFIG as string, {
       next: {

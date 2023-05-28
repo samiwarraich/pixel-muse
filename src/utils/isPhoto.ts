@@ -1,6 +1,6 @@
-import { Photo, ErrorData } from "@/types";
+import { Photo, Error } from "@/types";
 
-export const isPhoto = (photo: Photo | ErrorData): photo is Photo => {
+export const isPhoto = (photo: Photo | Error): photo is Photo => {
   if ("error" in photo) {
     return false;
   }
