@@ -1,6 +1,6 @@
 import { useCallback } from "react";
 
-export function useDownloadImage() {
+function useDownloadImage() {
   const downloadImage = useCallback(async (imageUrl: string) => {
     const response = await fetch(imageUrl);
     const blob = await response.blob();
@@ -16,3 +16,5 @@ export function useDownloadImage() {
 
   return { downloadImage };
 }
+
+export default useDownloadImage;
