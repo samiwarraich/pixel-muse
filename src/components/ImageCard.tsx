@@ -1,5 +1,5 @@
 "use client";
-import { useState, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { FiDownload, FiRefreshCw } from "react-icons/fi";
 import { useDownloadImage } from "@/hooks";
@@ -12,31 +12,44 @@ import {
 } from "@/components";
 import { getPhoto } from "@/services";
 import { isPhoto } from "@/utils";
-import { Error, Photo } from "@/types";
+import { ErrorData, Photo } from "@/types";
 import { useColor, toColor } from "react-color-palette";
 
 interface ImageItemProps {
-  photo: Photo | Error;
+  photo: Photo | ErrorData;
 }
 
 const ImageItem = ({ photo }: ImageItemProps) => {
   const imageCardRef = useRef<HTMLDivElement>(null);
   const [imgUrl, setImgUrl] = useState(isPhoto(photo) ? photo.image : "");
-  const [colorOne, setColorOne] = useState(
-    isPhoto(photo) ? photo.firstColor : ""
-  );
-  const [colorTwo, setColorTwo] = useState(
-    isPhoto(photo) ? photo.secondColor : ""
-  );
+  const [isColorChanged, setIsColorChanged] = useState(false);
   const [error, setError] = useState(isPhoto(photo) ? "" : photo.error);
   const [isLoading, setIsLoading] = useState(false);
   const { downloadImage } = useDownloadImage();
-  const [firstColor, setFirstColor] = useColor("hex", colorOne);
-  const [secondColor, setSecondColor] = useColor("hex", colorTwo);
+  const [firstColor, setFirstColor] = useColor(
+    "hex",
+    isPhoto(photo) ? photo.firstColor : ""
+  );
+  const [secondColor, setSecondColor] = useColor(
+    "hex",
+    isPhoto(photo) ? photo.secondColor : ""
+  );
   const [showColorPicker, setShowColorPicker] = useState({
     first: false,
     second: false,
   });
+
+  useEffect(() => {
+    if (
+      isPhoto(photo) &&
+      (firstColor.hex !== photo.firstColor ||
+        secondColor.hex !== photo.secondColor)
+    ) {
+      setIsColorChanged(true);
+    } else {
+      setIsColorChanged(false);
+    }
+  }, [firstColor.hex, secondColor.hex, photo]);
 
   const onToggleColorPicker = (picker: "first" | "second") => {
     setShowColorPicker((prevState) => ({
@@ -52,17 +65,13 @@ const ImageItem = ({ photo }: ImageItemProps) => {
   const onReload = async () => {
     setIsLoading(true);
     setShowColorPicker({ first: false, second: false });
-    const isDiffColor =
-      firstColor.hex !== colorOne || secondColor.hex !== colorTwo;
     const photo = await getPhoto(
       true,
-      isDiffColor ? firstColor.rgb : undefined,
-      isDiffColor ? secondColor.rgb : undefined
+      isColorChanged ? firstColor.rgb : undefined,
+      isColorChanged ? secondColor.rgb : undefined
     );
     if (isPhoto(photo)) {
       setImgUrl(photo.image);
-      setColorOne(photo.firstColor);
-      setColorTwo(photo.secondColor);
       setFirstColor(toColor("hex", photo.firstColor));
       setSecondColor(toColor("hex", photo.secondColor));
       setError("");
