@@ -144,11 +144,13 @@ const ImageItem = ({ photo }: ImageItemProps) => {
             color={firstColor.hex}
             picker={1}
             toggle={onToggleColorPicker}
+            isDisabled={isDisabled}
           />
           <ColorPickerIcon
             color={secondColor.hex}
             picker={2}
             toggle={onToggleColorPicker}
+            isDisabled={isDisabled}
           />
         </div>
         <button
