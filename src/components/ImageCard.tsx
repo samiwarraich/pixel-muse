@@ -3,7 +3,7 @@ import { useState, useRef } from "react";
 import Image from "next/image";
 import { FiDownload, FiRefreshCw } from "react-icons/fi";
 import { useDownloadImage } from "@/hooks";
-import { ErrorMsg, Loader, ColorPickerIcon } from "@/components";
+import { ErrorMsg, Loader, ColorPickerIcon, ButtonIcon } from "@/components";
 import { getPhoto } from "@/services";
 import { IError, IPhoto } from "@/types";
 import { ColorPicker, useColor, toColor } from "react-color-palette";
@@ -128,17 +128,11 @@ const ImageItem = ({ photo }: ImageItemProps) => {
         )}
       </div>
       <div className="px-6 py-4 flex justify-between">
-        <button
+        <ButtonIcon
           onClick={onDownload}
-          disabled={isDisabled}
-          className={
-            isDisabled
-              ? "opacity-50"
-              : "transition-transform duration-200 hover:shadow-xl hover:-translate-y-1 focus-within:shadow-xl focus-within:-translate-y-1 focus:outline-none cursor-pointer"
-          }
-        >
-          <FiDownload size={24} />
-        </button>
+          isDisabled={isDisabled}
+          Icon={FiDownload}
+        />
         <div className="flex w-24 justify-between">
           <ColorPickerIcon
             color={firstColor.hex}
@@ -153,17 +147,11 @@ const ImageItem = ({ photo }: ImageItemProps) => {
             isDisabled={isDisabled}
           />
         </div>
-        <button
+        <ButtonIcon
           onClick={onReload}
-          disabled={isLoading}
-          className={
-            isLoading
-              ? "opacity-50"
-              : "transition-transform duration-200 hover:shadow-xl hover:-translate-y-1 focus-within:shadow-xl focus-within:-translate-y-1 focus:outline-none cursor-pointer"
-          }
-        >
-          <FiRefreshCw size={24} />
-        </button>
+          isDisabled={isLoading}
+          Icon={FiRefreshCw}
+        />
       </div>
     </div>
   );
