@@ -3,7 +3,7 @@ import { getConfig, getPhoto } from "@/services";
 
 export default async function Home() {
   const res = await getConfig();
-  const photo = await getPhoto();
+  const photo = await getPhoto(true);
   if ("error" in res && "error" in photo) {
     return <ErrorMsg name="boundary" message={res.error || photo.error} />;
   }

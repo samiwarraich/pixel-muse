@@ -10,6 +10,9 @@ module.exports = {
       fontFamily: {
         fira: ["var(--font-firaCode)"],
       },
+      borderColor: {
+        custom: "#9ba4b5",
+      },
     },
   },
   plugins: [],
