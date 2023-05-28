@@ -5,3 +5,4 @@ export { default as CardItem } from "./CardItem";
 export { default as ImageCard } from "./ImageCard";
 export { default as ErrorMsg } from "./ErrorMsg";
 export { default as Loader } from "./Loader";
+export { default as ColorPickerIcon } from "./ColorPickerIcon";

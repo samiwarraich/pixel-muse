@@ -3,7 +3,7 @@ import { useState, useRef } from "react";
 import Image from "next/image";
 import { FiDownload, FiRefreshCw } from "react-icons/fi";
 import { useDownloadImage } from "@/hooks";
-import { ErrorMsg, Loader } from "@/components";
+import { ErrorMsg, Loader, ColorPickerIcon } from "@/components";
 import { getPhoto } from "@/services";
 import { IError, IPhoto } from "@/types";
 import { ColorPicker, useColor, toColor } from "react-color-palette";
@@ -139,20 +139,16 @@ const ImageItem = ({ photo }: ImageItemProps) => {
         >
           <FiDownload size={24} />
         </button>
-        <div className="flex w-16 justify-between">
-          <div
-            className="w-6 h-6 rounded-full border-2 border-custom transition-transform duration-200 hover:shadow-xl hover:-translate-y-1 focus-within:shadow-xl focus-within:-translate-y-1 focus:outline-none cursor-pointer"
-            style={{
-              backgroundColor: firstColor.hex,
-            }}
-            onClick={() => onToggleColorPicker(1)}
+        <div className="flex w-24 justify-between">
+          <ColorPickerIcon
+            color={firstColor.hex}
+            picker={1}
+            toggle={onToggleColorPicker}
           />
-          <div
-            className="w-6 h-6 rounded-full border-2 border-custom transition-transform duration-200 hover:shadow-xl hover:-translate-y-1 focus-within:shadow-xl focus-within:-translate-y-1 focus:outline-none cursor-pointer"
-            style={{
-              backgroundColor: secondColor.hex,
-            }}
-            onClick={() => onToggleColorPicker(2)}
+          <ColorPickerIcon
+            color={secondColor.hex}
+            picker={2}
+            toggle={onToggleColorPicker}
           />
         </div>
         <button
