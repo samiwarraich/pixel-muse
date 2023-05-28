@@ -1,7 +1,7 @@
 interface ColorPickerIconProps {
   color: string;
-  picker: number;
-  toggle: (picker: number) => void;
+  picker: "first" | "second";
+  toggle: (picker: "first" | "second") => void;
   isDisabled: boolean;
 }
 

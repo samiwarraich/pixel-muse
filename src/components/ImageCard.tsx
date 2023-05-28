@@ -3,11 +3,17 @@ import { useState, useRef } from "react";
 import Image from "next/image";
 import { FiDownload, FiRefreshCw } from "react-icons/fi";
 import { useDownloadImage } from "@/hooks";
-import { ErrorMsg, Loader, ColorPickerIcon, ButtonIcon } from "@/components";
+import {
+  ErrorMsg,
+  Loader,
+  ColorPickerIcon,
+  ButtonIcon,
+  ColorPicker,
+} from "@/components";
 import { getPhoto } from "@/services";
 import { isPhoto } from "@/utils";
 import { IError, IPhoto } from "@/types";
-import { ColorPicker, useColor, toColor } from "react-color-palette";
+import { useColor, toColor } from "react-color-palette";
 
 interface ImageItemProps {
   photo: IPhoto | IError;
@@ -28,16 +34,15 @@ const ImageItem = ({ photo }: ImageItemProps) => {
   const [firstColor, setFirstColor] = useColor("hex", colorOne);
   const [secondColor, setSecondColor] = useColor("hex", colorTwo);
   const [showColorPicker, setShowColorPicker] = useState({
-    show: false,
-    picker: 0,
+    first: false,
+    second: false,
   });
 
-  const onToggleColorPicker = (picker: number) => {
-    if (showColorPicker.show && showColorPicker.picker !== picker) {
-      setShowColorPicker({ show: true, picker });
-    } else {
-      setShowColorPicker({ show: !showColorPicker.show, picker });
-    }
+  const onToggleColorPicker = (picker: "first" | "second") => {
+    setShowColorPicker((prevState) => ({
+      first: picker === "first" ? !prevState.first : false,
+      second: picker === "second" ? !prevState.second : false,
+    }));
   };
 
   const onDownload = () => {
@@ -46,7 +51,7 @@ const ImageItem = ({ photo }: ImageItemProps) => {
 
   const onReload = async () => {
     setIsLoading(true);
-    setShowColorPicker({ ...showColorPicker, show: false });
+    setShowColorPicker({ first: false, second: false });
     const isDiffColor =
       firstColor.hex !== colorOne || secondColor.hex !== colorTwo;
     const photo = await getPhoto(
@@ -79,34 +84,20 @@ const ImageItem = ({ photo }: ImageItemProps) => {
           <Loader />
         ) : error ? (
           <ErrorMsg name="image" message={error} />
-        ) : showColorPicker?.show ? (
-          <>
-            {showColorPicker?.picker === 1 ? (
-              <ColorPicker
-                width={
-                  imageCardRef?.current ? imageCardRef?.current?.offsetWidth : 0
-                }
-                height={200}
-                color={firstColor}
-                onChange={setFirstColor}
-                hideHSV
-                hideRGB
-                dark
-              />
-            ) : showColorPicker?.picker === 2 ? (
-              <ColorPicker
-                width={
-                  imageCardRef?.current ? imageCardRef?.current?.offsetWidth : 0
-                }
-                height={200}
-                color={secondColor}
-                onChange={setSecondColor}
-                hideHSV
-                hideRGB
-                dark
-              />
-            ) : null}
-          </>
+        ) : showColorPicker.first ? (
+          <ColorPicker
+            width={imageCardRef?.current?.offsetWidth || 0}
+            show={showColorPicker.first}
+            color={firstColor}
+            setColor={setFirstColor}
+          />
+        ) : showColorPicker.second ? (
+          <ColorPicker
+            width={imageCardRef?.current?.offsetWidth || 0}
+            show={showColorPicker.second}
+            color={secondColor}
+            setColor={setSecondColor}
+          />
         ) : (
           <Image
             src={imgUrl}
@@ -126,13 +117,13 @@ const ImageItem = ({ photo }: ImageItemProps) => {
         <div className="flex w-24 justify-between">
           <ColorPickerIcon
             color={firstColor.hex}
-            picker={1}
+            picker={"first"}
             toggle={onToggleColorPicker}
             isDisabled={isDisabled}
           />
           <ColorPickerIcon
             color={secondColor.hex}
-            picker={2}
+            picker={"second"}
             toggle={onToggleColorPicker}
             isDisabled={isDisabled}
           />

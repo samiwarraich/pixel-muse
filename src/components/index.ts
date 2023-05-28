@@ -7,3 +7,4 @@ export { default as ErrorMsg } from "./ErrorMsg";
 export { default as Loader } from "./Loader";
 export { default as ColorPickerIcon } from "./ColorPickerIcon";
 export { default as ButtonIcon } from "./ButtonIcon";
+export { default as ColorPicker } from "./ColorPicker";
