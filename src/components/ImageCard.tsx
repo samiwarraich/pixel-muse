@@ -12,11 +12,11 @@ import {
 } from "@/components";
 import { getPhoto } from "@/services";
 import { isPhoto } from "@/utils";
-import { IError, IPhoto } from "@/types";
+import { Error, Photo } from "@/types";
 import { useColor, toColor } from "react-color-palette";
 
 interface ImageItemProps {
-  photo: IPhoto | IError;
+  photo: Photo | Error;
 }
 
 const ImageItem = ({ photo }: ImageItemProps) => {

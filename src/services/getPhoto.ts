@@ -1,10 +1,10 @@
-import { IPhoto, IError } from "@/types";
+import { Photo, Error } from "@/types";
 
 export async function getPhoto(
   isClient?: Boolean,
   colorOne?: { r: number; g: number; b: number },
   colorTwo?: { r: number; g: number; b: number }
-): Promise<IPhoto | IError> {
+): Promise<Photo | Error> {
   const url: string = isClient
     ? (process.env.NEXT_PUBLIC_BOT_URL as string)
     : (process.env.BOT_URL as string);

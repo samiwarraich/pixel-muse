@@ -1,12 +1,12 @@
-import { IPhoto, IError } from "@/types";
+import { Photo, Error } from "@/types";
 
-export const isPhoto = (photo: IPhoto | IError): photo is IPhoto => {
+export const isPhoto = (photo: Photo | Error): photo is Photo => {
   if ("error" in photo) {
     return false;
   }
   return (
-    (photo as IPhoto).image !== undefined &&
-    (photo as IPhoto).firstColor !== undefined &&
-    (photo as IPhoto).secondColor !== undefined
+    (photo as Photo).image !== undefined &&
+    (photo as Photo).firstColor !== undefined &&
+    (photo as Photo).secondColor !== undefined
   );
 };

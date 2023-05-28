@@ -1,11 +1,11 @@
 import { ImageCard } from "@/components";
 import { CardItem } from "@/components";
-import { IConfig, IError, IPhoto } from "@/types";
+import { Config, Error, Photo } from "@/types";
 import { ErrorMsg } from "@/components";
 
 interface CardProps {
-  data: IConfig | IError;
-  photo: IPhoto | IError;
+  data: Config | Error;
+  photo: Photo | Error;
 }
 
 const Card = ({ data, photo }: CardProps) => {

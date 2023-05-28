@@ -1,4 +1,4 @@
-interface IBot {
+interface Bot {
   title: string;
   username: string;
   url: string;
@@ -7,18 +7,18 @@ interface IBot {
   description: string;
 }
 
-interface IConfig {
-  bots: IBot[];
+interface Config {
+  bots: Bot[];
 }
 
-interface IPhoto {
+interface Photo {
   image: string;
   firstColor: string;
   secondColor: string;
 }
 
-interface IError {
+interface Error {
   error: string;
 }
 
-export { type IBot, type IConfig, type IPhoto, type IError };
+export { type Bot, type Config, type Photo, type Error };
