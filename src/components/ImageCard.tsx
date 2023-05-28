@@ -5,6 +5,7 @@ import { FiDownload, FiRefreshCw } from "react-icons/fi";
 import { useDownloadImage } from "@/hooks";
 import { ErrorMsg, Loader, ColorPickerIcon, ButtonIcon } from "@/components";
 import { getPhoto } from "@/services";
+import { isPhoto } from "@/utils";
 import { IError, IPhoto } from "@/types";
 import { ColorPicker, useColor, toColor } from "react-color-palette";
 
@@ -14,16 +15,14 @@ interface ImageItemProps {
 
 const ImageItem = ({ photo }: ImageItemProps) => {
   const imageCardRef = useRef<HTMLDivElement>(null);
-  const [imgUrl, setImgUrl] = useState(
-    "image" in photo && photo.image ? photo.image : ""
-  );
+  const [imgUrl, setImgUrl] = useState(isPhoto(photo) ? photo.image : "");
   const [colorOne, setColorOne] = useState(
-    "firstColor" in photo && photo.firstColor ? photo.firstColor : ""
+    isPhoto(photo) ? photo.firstColor : ""
   );
   const [colorTwo, setColorTwo] = useState(
-    "secondColor" in photo && photo.secondColor ? photo.secondColor : ""
+    isPhoto(photo) ? photo.secondColor : ""
   );
-  const [error, setError] = useState("error" in photo ? photo.error : "");
+  const [error, setError] = useState(isPhoto(photo) ? "" : photo.error);
   const [isLoading, setIsLoading] = useState(false);
   const { downloadImage } = useDownloadImage();
   const [firstColor, setFirstColor] = useColor("hex", colorOne);
@@ -48,31 +47,22 @@ const ImageItem = ({ photo }: ImageItemProps) => {
   const onReload = async () => {
     setIsLoading(true);
     setShowColorPicker({ ...showColorPicker, show: false });
-    if (firstColor.hex !== colorOne || secondColor.hex !== colorTwo) {
-      console.log("different color");
-      const photo = await getPhoto(true, firstColor.rgb, secondColor.rgb);
-      if ("image" in photo && "firstColor" in photo && "secondColor" in photo) {
-        photo.image && setImgUrl(photo.image);
-        photo.firstColor && setColorOne(photo.firstColor);
-        photo.secondColor && setColorTwo(photo.secondColor);
-        photo.firstColor && setFirstColor(toColor("hex", photo.firstColor));
-        photo.secondColor && setSecondColor(toColor("hex", photo.secondColor));
-        setError("");
-      } else {
-        setError(photo.error);
-      }
+    const isDiffColor =
+      firstColor.hex !== colorOne || secondColor.hex !== colorTwo;
+    const photo = await getPhoto(
+      true,
+      isDiffColor ? firstColor.rgb : undefined,
+      isDiffColor ? secondColor.rgb : undefined
+    );
+    if (isPhoto(photo)) {
+      setImgUrl(photo.image);
+      setColorOne(photo.firstColor);
+      setColorTwo(photo.secondColor);
+      setFirstColor(toColor("hex", photo.firstColor));
+      setSecondColor(toColor("hex", photo.secondColor));
+      setError("");
     } else {
-      const photo = await getPhoto(true);
-      if ("image" in photo && "firstColor" in photo && "secondColor" in photo) {
-        photo.image && setImgUrl(photo.image);
-        photo.firstColor && setColorOne(photo.firstColor);
-        photo.secondColor && setColorTwo(photo.secondColor);
-        photo.firstColor && setFirstColor(toColor("hex", photo.firstColor));
-        photo.secondColor && setSecondColor(toColor("hex", photo.secondColor));
-        setError("");
-      } else {
-        setError(photo.error);
-      }
+      setError(photo.error);
     }
     setIsLoading(false);
   };
