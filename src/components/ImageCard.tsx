@@ -23,7 +23,7 @@ const ImageItem = ({ photo }: ImageItemProps) => {
   const imageCardRef = useRef<HTMLDivElement>(null);
   const [imgUrl, setImgUrl] = useState(isPhoto(photo) ? photo.image : "");
   const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState(isPhoto(photo) ? "" : photo.error);
+  const [error, setError] = useState(!isPhoto(photo) ? photo.error : "");
   const { downloadImage } = useDownloadImage();
   const {
     firstColorHex,

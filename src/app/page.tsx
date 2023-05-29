@@ -1,16 +1,17 @@
 import { Card, ErrorMsg } from "@/components";
 import { getConfig, getPhoto } from "@/services";
+import { isConfig, isPhoto } from "@/utils";
 
 export default async function Home() {
-  const res = await getConfig();
+  const config = await getConfig();
   const photo = await getPhoto(true);
-  if ("error" in res && "error" in photo) {
-    return <ErrorMsg name="boundary" message={res.error || photo.error} />;
+  if (!isConfig(config) && !isPhoto(photo)) {
+    return <ErrorMsg name="boundary" message={config.error || photo.error} />;
   }
 
   return (
     <div className="flex justify-between">
-      <Card data={res} photo={photo} />
+      <Card data={config} photo={photo} />
     </div>
   );
 }
