@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useCallback, useMemo } from "react";
 import { useColor } from "react-color-palette";
 
 interface UseColorPickerProps {
@@ -19,26 +19,38 @@ const useColorPicker = ({
     second: false,
   });
 
-  const onToggleColorPicker = (picker: "first" | "second") => {
+  const onToggleColorPicker = useCallback((picker: "first" | "second") => {
     setShowColorPicker((prevState) => ({
       first: picker === "first" ? !prevState.first : false,
       second: picker === "second" ? !prevState.second : false,
     }));
-  };
+  }, []);
 
-  return {
-    firstColorHex,
-    setFirstColorHex,
-    secondColorHex,
-    setSecondColorHex,
-    firstColor,
-    setFirstColor,
-    secondColor,
-    setSecondColor,
-    showColorPicker,
-    setShowColorPicker,
-    onToggleColorPicker,
-  };
+  return useMemo(
+    () => ({
+      firstColorHex,
+      setFirstColorHex,
+      secondColorHex,
+      setSecondColorHex,
+      firstColor,
+      setFirstColor,
+      secondColor,
+      setSecondColor,
+      showColorPicker,
+      setShowColorPicker,
+      onToggleColorPicker,
+    }),
+    [
+      firstColorHex,
+      secondColorHex,
+      firstColor,
+      setFirstColor,
+      secondColor,
+      setSecondColor,
+      showColorPicker,
+      onToggleColorPicker,
+    ]
+  );
 };
 
 export default useColorPicker;
