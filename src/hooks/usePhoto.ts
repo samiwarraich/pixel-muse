@@ -13,7 +13,7 @@ const usePhoto = ({ photo }: UsePhotoProps) => {
   const [imgUrl, setImgUrl] = useState(isPhoto(photo) ? photo.image : "");
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(!isPhoto(photo) ? photo.error : "");
-  const { downloadImage } = useDownloadImage();
+  const { downloadImage } = useDownloadImage({ setError });
   const {
     firstColorHex,
     setFirstColorHex,
@@ -25,10 +25,10 @@ const usePhoto = ({ photo }: UsePhotoProps) => {
     setSecondColor,
     showColorPicker,
     setShowColorPicker,
-    onToggleColorPicker,
+    toggleColorPicker,
   } = useColorPicker({
-    initialFirstColorHex: isPhoto(photo) ? photo.firstColor : "",
-    initialSecondColorHex: isPhoto(photo) ? photo.secondColor : "",
+    initialFirstColor: isPhoto(photo) ? photo.firstColor : "",
+    initialSecondColor: isPhoto(photo) ? photo.secondColor : "",
   });
 
   const onDownload = useCallback(() => {
@@ -36,6 +36,7 @@ const usePhoto = ({ photo }: UsePhotoProps) => {
   }, [downloadImage, imgUrl]);
 
   const onReload = useCallback(async () => {
+    setError("");
     setIsLoading(true);
     setShowColorPicker({ first: false, second: false });
     const isDiffColor =
@@ -82,7 +83,7 @@ const usePhoto = ({ photo }: UsePhotoProps) => {
       secondColor,
       setSecondColor,
       showColorPicker,
-      onToggleColorPicker,
+      toggleColorPicker,
     }),
     [
       imgUrl,
@@ -95,7 +96,7 @@ const usePhoto = ({ photo }: UsePhotoProps) => {
       secondColor,
       setSecondColor,
       showColorPicker,
-      onToggleColorPicker,
+      toggleColorPicker,
     ]
   );
 };

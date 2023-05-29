@@ -29,7 +29,7 @@ const ImageCard = ({ photo }: ImageCardProps) => {
     secondColor,
     setSecondColor,
     showColorPicker,
-    onToggleColorPicker,
+    toggleColorPicker,
   } = usePhoto({ photo });
 
   const isDisabled = !!error || isLoading;
@@ -78,13 +78,13 @@ const ImageCard = ({ photo }: ImageCardProps) => {
           <ColorPickerIcon
             color={firstColor.hex}
             picker={"first"}
-            toggle={onToggleColorPicker}
+            toggle={toggleColorPicker}
             isDisabled={isDisabled}
           />
           <ColorPickerIcon
             color={secondColor.hex}
             picker={"second"}
-            toggle={onToggleColorPicker}
+            toggle={toggleColorPicker}
             isDisabled={isDisabled}
           />
         </div>
