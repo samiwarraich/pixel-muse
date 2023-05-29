@@ -1,3 +1,4 @@
+import { memo } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { FaLink, FaTwitter, FaGithub } from "react-icons/fa";
@@ -33,7 +34,7 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default memo(Header);
 
 const links = [
   {

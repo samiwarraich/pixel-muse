@@ -1,3 +1,5 @@
+import { memo } from "react";
+
 interface ColorPickerIconProps {
   color: string;
   picker: "first" | "second";
@@ -26,4 +28,4 @@ const ColorPickerIcon = ({
   );
 };
 
-export default ColorPickerIcon;
+export default memo(ColorPickerIcon);

@@ -1,3 +1,5 @@
+import { memo } from "react";
+
 interface ErrorMsgProps {
   name: string;
   message: string;
@@ -29,4 +31,4 @@ const ErrorMsg = ({ name, message }: ErrorMsgProps) => {
   );
 };
 
-export default ErrorMsg;
+export default memo(ErrorMsg);

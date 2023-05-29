@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { ImageCard } from "@/components";
 import { CardItem } from "@/components";
 import { Config, ErrorData, Photo } from "@/types";
@@ -36,4 +37,4 @@ const Card = ({ data, photo }: CardProps) => {
   );
 };
 
-export default Card;
+export default memo(Card);

@@ -1,3 +1,5 @@
+import { memo } from "react";
+
 interface ButtonProps {
   onClick: () => void;
   isDisabled: boolean;
@@ -20,4 +22,4 @@ const ButtonIcon = ({ onClick, isDisabled, Icon }: ButtonProps) => {
   );
 };
 
-export default ButtonIcon;
+export default memo(ButtonIcon);

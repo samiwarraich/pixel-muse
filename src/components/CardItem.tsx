@@ -1,3 +1,4 @@
+import { memo } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Bot } from "@/types";
@@ -25,4 +26,4 @@ const CardItem = ({ title, username, url, image, alt, description }: Bot) => {
   );
 };
 
-export default CardItem;
+export default memo(CardItem);

@@ -1,3 +1,5 @@
+import { memo } from "react";
+
 const Loader = () => {
   return (
     <div className="flex items-center justify-center h-full">
@@ -6,4 +8,4 @@ const Loader = () => {
   );
 };
 
-export default Loader;
+export default memo(Loader);
