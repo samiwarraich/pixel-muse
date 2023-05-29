@@ -1,0 +1,103 @@
+import { useState, useCallback, useMemo } from "react";
+import { isPhoto } from "@/utils";
+import { getPhoto } from "@/services";
+import { ErrorData, Photo } from "@/types";
+import { toColor } from "react-color-palette";
+import { useDownloadImage, useColorPicker } from "@/hooks";
+
+interface UsePhotoProps {
+  photo: Photo | ErrorData;
+}
+
+const usePhoto = ({ photo }: UsePhotoProps) => {
+  const [imgUrl, setImgUrl] = useState(isPhoto(photo) ? photo.image : "");
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(!isPhoto(photo) ? photo.error : "");
+  const { downloadImage } = useDownloadImage();
+  const {
+    firstColorHex,
+    setFirstColorHex,
+    secondColorHex,
+    setSecondColorHex,
+    firstColor,
+    setFirstColor,
+    secondColor,
+    setSecondColor,
+    showColorPicker,
+    setShowColorPicker,
+    onToggleColorPicker,
+  } = useColorPicker({
+    initialFirstColorHex: isPhoto(photo) ? photo.firstColor : "",
+    initialSecondColorHex: isPhoto(photo) ? photo.secondColor : "",
+  });
+
+  const onDownload = useCallback(() => {
+    downloadImage(imgUrl);
+  }, [downloadImage, imgUrl]);
+
+  const onReload = useCallback(async () => {
+    setIsLoading(true);
+    setShowColorPicker({ first: false, second: false });
+    const isDiffColor =
+      firstColor.hex !== firstColorHex || secondColor.hex !== secondColorHex;
+    const photo = await getPhoto(
+      true,
+      isDiffColor ? firstColor.rgb : undefined,
+      isDiffColor ? secondColor.rgb : undefined
+    );
+    if (isPhoto(photo)) {
+      setImgUrl(photo.image);
+      setFirstColorHex(photo.firstColor);
+      setSecondColorHex(photo.secondColor);
+      setFirstColor(toColor("hex", photo.firstColor));
+      setSecondColor(toColor("hex", photo.secondColor));
+      setError("");
+    } else {
+      setError(photo?.error);
+    }
+    setIsLoading(false);
+  }, [
+    firstColor.hex,
+    firstColor.rgb,
+    firstColorHex,
+    secondColor.hex,
+    secondColor.rgb,
+    secondColorHex,
+    setFirstColor,
+    setFirstColorHex,
+    setSecondColor,
+    setSecondColorHex,
+    setShowColorPicker,
+  ]);
+
+  return useMemo(
+    () => ({
+      imgUrl,
+      isLoading,
+      error,
+      onDownload,
+      onReload,
+      firstColor,
+      setFirstColor,
+      secondColor,
+      setSecondColor,
+      showColorPicker,
+      onToggleColorPicker,
+    }),
+    [
+      imgUrl,
+      isLoading,
+      error,
+      onDownload,
+      onReload,
+      firstColor,
+      setFirstColor,
+      secondColor,
+      setSecondColor,
+      showColorPicker,
+      onToggleColorPicker,
+    ]
+  );
+};
+
+export default usePhoto;
