@@ -15,11 +15,11 @@ import { isPhoto } from "@/utils";
 import { ErrorData, Photo } from "@/types";
 import { toColor } from "react-color-palette";
 
-interface ImageItemProps {
+interface ImageCardProps {
   photo: Photo | ErrorData;
 }
 
-const ImageItem = ({ photo }: ImageItemProps) => {
+const ImageCard = ({ photo }: ImageCardProps) => {
   const imageCardRef = useRef<HTMLDivElement>(null);
   const [imgUrl, setImgUrl] = useState(isPhoto(photo) ? photo.image : "");
   const [isLoading, setIsLoading] = useState(false);
@@ -147,4 +147,4 @@ const ImageItem = ({ photo }: ImageItemProps) => {
   );
 };
 
-export default ImageItem;
+export default ImageCard;
