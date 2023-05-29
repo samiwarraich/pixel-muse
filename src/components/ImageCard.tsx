@@ -1,5 +1,5 @@
 "use client";
-import { useState, useRef } from "react";
+import { useState, useCallback, useRef } from "react";
 import Image from "next/image";
 import { FiDownload, FiRefreshCw } from "react-icons/fi";
 import { useDownloadImage, useColorPicker } from "@/hooks";
@@ -42,11 +42,11 @@ const ImageItem = ({ photo }: ImageItemProps) => {
     initialSecondColorHex: isPhoto(photo) ? photo.secondColor : "",
   });
 
-  const onDownload = () => {
+  const onDownload = useCallback(() => {
     downloadImage(imgUrl);
-  };
+  }, [downloadImage, imgUrl]);
 
-  const onReload = async () => {
+  const onReload = useCallback(async () => {
     setIsLoading(true);
     setShowColorPicker({ first: false, second: false });
     const isDiffColor =
@@ -67,7 +67,19 @@ const ImageItem = ({ photo }: ImageItemProps) => {
       setError(photo.error);
     }
     setIsLoading(false);
-  };
+  }, [
+    firstColor.hex,
+    firstColor.rgb,
+    firstColorHex,
+    secondColor.hex,
+    secondColor.rgb,
+    secondColorHex,
+    setFirstColor,
+    setFirstColorHex,
+    setSecondColor,
+    setSecondColorHex,
+    setShowColorPicker,
+  ]);
 
   const isDisabled = !!error || isLoading;
 
