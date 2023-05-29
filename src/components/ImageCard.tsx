@@ -61,7 +61,7 @@ const ImageCard = ({ photo }: ImageCardProps) => {
         ) : (
           <Image
             src={imgUrl}
-            alt={""}
+            alt={`A random pixel image with colors: ${firstColor.hex}, ${secondColor.hex}`}
             layout="fill"
             objectFit="cover"
             priority
