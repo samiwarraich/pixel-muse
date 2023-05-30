@@ -41,11 +41,11 @@ const usePhoto = ({ photo }: UsePhotoProps) => {
     setShowColorPicker({ first: false, second: false });
     const isDiffColor =
       firstColor.hex !== firstColorHex || secondColor.hex !== secondColorHex;
-    const photo = await getPhoto(
-      true,
-      isDiffColor ? firstColor.rgb : undefined,
-      isDiffColor ? secondColor.rgb : undefined
-    );
+    const photo = await getPhoto({
+      isClient: true,
+      colorOne: isDiffColor ? firstColor.rgb : undefined,
+      colorTwo: isDiffColor ? secondColor.rgb : undefined,
+    });
     if (isPhoto(photo)) {
       setImgUrl(photo.image);
       setFirstColorHex(photo.firstColor);

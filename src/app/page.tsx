@@ -4,7 +4,7 @@ import { isConfig, isPhoto } from "@/utils";
 
 export default async function Home() {
   const config = await getConfig();
-  const photo = await getPhoto(true);
+  const photo = await getPhoto({ isClient: true });
   if (!isConfig(config) && !isPhoto(photo)) {
     return <ErrorMsg name="boundary" message={config.error || photo.error} />;
   }
