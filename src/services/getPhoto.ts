@@ -1,24 +1,28 @@
 import { Photo, ErrorData } from "@/types";
 
-export async function getPhoto(
-  isClient?: Boolean,
-  colorOne?: { r: number; g: number; b: number },
-  colorTwo?: { r: number; g: number; b: number }
-): Promise<Photo | ErrorData> {
-  const url: string = isClient
-    ? (process.env.NEXT_PUBLIC_BOT_URL as string)
-    : (process.env.BOT_URL as string);
-  const hash: string = isClient
-    ? (process.env.NEXT_PUBLIC_WEB_HASH as string)
-    : (process.env.WEB_HASH as string);
+interface GetPhotoProps {
+  isClient?: boolean;
+  colorOne?: { r: number; g: number; b: number };
+  colorTwo?: { r: number; g: number; b: number };
+}
+
+export async function getPhoto({
+  isClient,
+  colorOne,
+  colorTwo,
+}: GetPhotoProps): Promise<Photo | ErrorData> {
+  const url = isClient ? process.env.NEXT_PUBLIC_BOT_URL : process.env.BOT_URL;
+  const hash = isClient
+    ? process.env.NEXT_PUBLIC_WEB_HASH
+    : process.env.WEB_HASH;
 
   const data = { isClient, colorOne, colorTwo };
   try {
-    const res = await fetch(url, {
+    const res = await fetch(url as string, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "web-hash": hash,
+        "web-hash": hash as string,
       },
       next: {
         revalidate: 1,
