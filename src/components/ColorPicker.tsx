@@ -25,4 +25,4 @@ const ColorPicker = ({ show, color, setColor, width }: ColorPickerProps) => {
   );
 };
 
-export default memo(ColorPicker);
+export default ColorPicker;
