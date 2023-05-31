@@ -23,5 +23,5 @@ export const firaCode = localFont({
       weight: "700",
     },
   ],
-  variable: "--font-firaCode",
+  variable: "--font-fira-code",
 });

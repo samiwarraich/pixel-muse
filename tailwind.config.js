@@ -8,12 +8,17 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        fira: ["var(--font-firaCode)"],
+        "fira-code": ["var(--font-fira-code)"],
       },
       borderColor: {
-        custom: "#9ba4b5",
+        "custom-gray": "#9ba4b5",
       },
     },
   },
   plugins: [],
+  safelist: [
+    "hover:text-[#ffffff]",
+    "hover:text-[#00acee]",
+    "hover:text-[#000000]",
+  ],
 };

@@ -11,7 +11,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${firaCode.variable} font-fira`}>
+    <html lang="en" className={`${firaCode.variable} font-fira-code`}>
       <body>
         <div className="container mx-auto m-4">
           <Header />
