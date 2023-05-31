@@ -43,7 +43,7 @@ const links = [
     hoverColor: "#ffffff",
   },
   {
-    href: "https://twitter.com/samiwarraich2",
+    href: "https://twitter.com/samiwarra1ch",
     icon: FaTwitter,
     hoverColor: "#00acee",
   },
