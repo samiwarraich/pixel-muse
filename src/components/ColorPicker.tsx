@@ -1,5 +1,4 @@
 "use client";
-import { memo } from "react";
 import { ColorPicker as RColorPicker } from "react-color-palette";
 
 interface ColorPickerProps {
