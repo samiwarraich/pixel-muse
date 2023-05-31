@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     description:
       "Pixel Muse is a suite of bots that create and share random color pixel images on Twitter and Telegram platforms. You can enjoy these beautiful images every day by following the bots on social media or requesting them via messages or mentions.",
     site: "@PixelMuseBot",
-    creator: "@samiwarraich2",
+    creator: "@samiwarra1ch",
     images: "/images/pixel-muse-bot.jpeg",
   },
   openGraph: {
