@@ -1,4 +1,5 @@
 "use client";
+import { memo } from "react";
 import { ColorPicker as RColorPicker } from "react-color-palette";
 
 interface ColorPickerProps {
@@ -24,4 +25,4 @@ const ColorPicker = ({ show, color, setColor, width }: ColorPickerProps) => {
   );
 };
 
-export default ColorPicker;
+export default memo(ColorPicker);
