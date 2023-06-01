@@ -1,6 +1,5 @@
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
-import Script from "next/script";
 import { Header, Footer } from "@/components";
 import { firaCode } from "@/utils";
 
@@ -18,7 +17,6 @@ export default function RootLayout({
           <Header />
           {children}
           <Analytics />
-
           <Footer />
         </div>
       </body>
