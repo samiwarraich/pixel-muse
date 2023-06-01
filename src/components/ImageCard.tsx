@@ -11,6 +11,7 @@ import {
   ColorPicker,
 } from "@/components";
 import { ErrorData, Photo } from "@/types";
+import { isPhoto } from "@/utils";
 
 interface ImageCardProps {
   photo: Photo | ErrorData;
@@ -42,8 +43,11 @@ const ImageCard = ({ photo }: ImageCardProps) => {
       <div className="relative h-80 w-full">
         {isLoading ? (
           <Loader />
-        ) : error ? (
-          <ErrorMsg name="image" message={error} />
+        ) : error || !isPhoto(photo) ? (
+          <ErrorMsg
+            name="image"
+            message={error || (photo as ErrorData).error}
+          />
         ) : showColorPicker.first ? (
           <ColorPicker
             width={imageCardRef?.current?.offsetWidth || 0}
