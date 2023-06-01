@@ -29,6 +29,7 @@ export async function getPhoto({
       },
       body: JSON.stringify(data),
     });
+    if (!res.ok) return { error: "Something went wrong! 🙁" };
     const { image, firstColor, secondColor } = await res.json();
     return {
       image,
