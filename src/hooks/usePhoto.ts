@@ -52,7 +52,6 @@ const usePhoto = ({ photo }: UsePhotoProps) => {
       setSecondColorHex(photo.secondColor);
       setFirstColor(toColor("hex", photo.firstColor));
       setSecondColor(toColor("hex", photo.secondColor));
-      setError("");
     } else {
       setError(photo?.error);
     }

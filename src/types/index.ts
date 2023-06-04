@@ -15,6 +15,7 @@ interface Photo {
   image: string;
   firstColor: string;
   secondColor: string;
+  rand: number;
 }
 
 interface ErrorData {
