@@ -3,6 +3,7 @@ import Image from "next/image";
 
 const FBPixel = () => {
   const FB_PIXEL = process.env.NEXT_PUBLIC_FB_PIXEL;
+  if (!FB_PIXEL) return null;
   return (
     <>
       <Script id="fb-pixel">

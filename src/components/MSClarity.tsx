@@ -2,6 +2,7 @@ import Script from "next/script";
 
 const MSClarity = () => {
   const MS_CLARITY = process.env.NEXT_PUBLIC_MS_CLARITY;
+  if (!MS_CLARITY) return null;
   return (
     <>
       <Script type="text/javascript" id="ms-clarity">
