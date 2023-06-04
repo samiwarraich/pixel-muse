@@ -95,7 +95,7 @@ const ImageCard = ({ photo }: ImageCardProps) => {
         <ButtonIcon
           onClick={() => {
             onReload();
-            if (typeof window !== undefined && window.fbq)
+            if (typeof window !== "undefined")
               window.fbq("trackCustom", "onReload", photo);
           }}
           isDisabled={isLoading}
