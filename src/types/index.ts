@@ -5,6 +5,7 @@ interface Bot {
   image: string;
   alt: string;
   description: string;
+  type: string;
 }
 
 interface Config {
