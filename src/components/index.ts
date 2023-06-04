@@ -8,3 +8,5 @@ export { default as Loader } from "./Loader";
 export { default as ColorPickerIcon } from "./ColorPickerIcon";
 export { default as ButtonIcon } from "./ButtonIcon";
 export { default as ColorPicker } from "./ColorPicker";
+export { default as MSClarity } from "./MSClarity";
+export { default as FBPixel } from "./FBPixel";
