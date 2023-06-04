@@ -76,9 +76,8 @@ const ImageCard = ({ photo }: ImageCardProps) => {
         <ButtonIcon
           onClick={() => {
             onDownload();
-            if (typeof window !== "undefined") {
+            if (typeof window !== "undefined")
               window.clarity("set", "clickOn", "download");
-            }
           }}
           isDisabled={isDisabled}
           Icon={FiDownload}
@@ -100,10 +99,8 @@ const ImageCard = ({ photo }: ImageCardProps) => {
         <ButtonIcon
           onClick={() => {
             onReload();
-            if (typeof window !== "undefined") {
-              window.fbq("trackCustom", "onReload", photo);
+            if (typeof window !== "undefined")
               window.clarity("set", "clickOn", "reload");
-            }
           }}
           isDisabled={isLoading}
           Icon={FiRefreshCw}
