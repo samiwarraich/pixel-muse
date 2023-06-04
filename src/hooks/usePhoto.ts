@@ -10,7 +10,6 @@ interface UsePhotoProps {
 }
 
 const usePhoto = ({ photo }: UsePhotoProps) => {
-  const fbq = window.fbq !== undefined && window.fbq;
   const [imgUrl, setImgUrl] = useState(isPhoto(photo) ? photo.image : "");
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(!isPhoto(photo) ? photo.error : "");
@@ -53,7 +52,6 @@ const usePhoto = ({ photo }: UsePhotoProps) => {
       setSecondColorHex(photo.secondColor);
       setFirstColor(toColor("hex", photo.firstColor));
       setSecondColor(toColor("hex", photo.secondColor));
-      fbq("trackCustom", "onReload", photo);
     } else {
       setError(photo?.error);
     }
@@ -70,7 +68,6 @@ const usePhoto = ({ photo }: UsePhotoProps) => {
     setSecondColor,
     setSecondColorHex,
     setShowColorPicker,
-    fbq,
   ]);
 
   return useMemo(

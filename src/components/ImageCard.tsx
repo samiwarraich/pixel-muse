@@ -93,7 +93,11 @@ const ImageCard = ({ photo }: ImageCardProps) => {
           />
         </div>
         <ButtonIcon
-          onClick={onReload}
+          onClick={() => {
+            onReload();
+            if (typeof window !== undefined && window.fbq)
+              window.fbq("trackCustom", "onReload", photo);
+          }}
           isDisabled={isLoading}
           Icon={FiRefreshCw}
         />
