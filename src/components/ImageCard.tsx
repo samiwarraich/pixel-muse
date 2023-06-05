@@ -11,7 +11,7 @@ import {
   ColorPicker,
 } from "@/components";
 import { ErrorData, Photo } from "@/types";
-import { isPhoto } from "@/utils";
+import { isPhoto, setClarity } from "@/utils";
 
 interface ImageCardProps {
   photo: Photo | ErrorData;
@@ -35,8 +35,7 @@ const ImageCard = ({ photo }: ImageCardProps) => {
 
   const handleClick = (clickOn: string, callback: () => void) => {
     callback();
-    if (typeof window !== "undefined")
-      window.clarity("set", "clickOn", clickOn);
+    setClarity("clickOn", clickOn);
   };
 
   const isDisabled = !!error || isLoading;
