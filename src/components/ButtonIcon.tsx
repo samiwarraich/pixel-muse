@@ -4,7 +4,7 @@ interface ButtonProps {
   onClick: () => void;
   isDisabled: boolean;
   Icon: React.ElementType;
-  ariaLabel: string;
+  ariaLabel?: string;
 }
 
 const ButtonIcon = ({ onClick, isDisabled, Icon, ariaLabel }: ButtonProps) => {

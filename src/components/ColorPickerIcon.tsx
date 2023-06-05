@@ -5,7 +5,7 @@ interface ColorPickerIconProps {
   picker: "first" | "second";
   toggle: (picker: "first" | "second") => void;
   isDisabled: boolean;
-  ariaLabel: string;
+  ariaLabel?: string;
 }
 
 const ColorPickerIcon = ({
