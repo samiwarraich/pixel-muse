@@ -82,6 +82,7 @@ const ImageCard = ({ photo }: ImageCardProps) => {
           onClick={() => handleClick("download", onDownload)}
           isDisabled={isDisabled}
           Icon={FiDownload}
+          ariaLabel="Download"
         />
         <div className="flex w-24 justify-between">
           <ColorPickerIcon
@@ -89,18 +90,21 @@ const ImageCard = ({ photo }: ImageCardProps) => {
             picker={"first"}
             toggle={toggleColorPicker}
             isDisabled={isDisabled}
+            ariaLabel="First Color"
           />
           <ColorPickerIcon
             color={secondColor.hex}
             picker={"second"}
             toggle={toggleColorPicker}
             isDisabled={isDisabled}
+            ariaLabel="Second Color"
           />
         </div>
         <ButtonIcon
           onClick={() => handleClick("reload", onReload)}
           isDisabled={isLoading}
           Icon={FiRefreshCw}
+          ariaLabel="Reload"
         />
       </div>
     </div>

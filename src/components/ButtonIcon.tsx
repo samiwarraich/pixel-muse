@@ -4,13 +4,15 @@ interface ButtonProps {
   onClick: () => void;
   isDisabled: boolean;
   Icon: React.ElementType;
+  ariaLabel: string;
 }
 
-const ButtonIcon = ({ onClick, isDisabled, Icon }: ButtonProps) => {
+const ButtonIcon = ({ onClick, isDisabled, Icon, ariaLabel }: ButtonProps) => {
   return (
     <button
       onClick={onClick}
       disabled={isDisabled}
+      aria-label={ariaLabel}
       className={
         isDisabled
           ? "opacity-50"
