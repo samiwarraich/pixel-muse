@@ -33,6 +33,12 @@ const ImageCard = ({ photo }: ImageCardProps) => {
     toggleColorPicker,
   } = usePhoto({ photo });
 
+  const handleClick = (clickOn: string, callback: () => void) => {
+    callback();
+    if (typeof window !== "undefined")
+      window.clarity("set", "clickOn", clickOn);
+  };
+
   const isDisabled = !!error || isLoading;
 
   return (
@@ -74,11 +80,7 @@ const ImageCard = ({ photo }: ImageCardProps) => {
       </div>
       <div className="px-6 py-4 flex justify-between">
         <ButtonIcon
-          onClick={() => {
-            onDownload();
-            if (typeof window !== "undefined")
-              window.clarity("set", "clickOn", "download");
-          }}
+          onClick={() => handleClick("download", onDownload)}
           isDisabled={isDisabled}
           Icon={FiDownload}
         />
@@ -97,11 +99,7 @@ const ImageCard = ({ photo }: ImageCardProps) => {
           />
         </div>
         <ButtonIcon
-          onClick={() => {
-            onReload();
-            if (typeof window !== "undefined")
-              window.clarity("set", "clickOn", "reload");
-          }}
+          onClick={() => handleClick("reload", onReload)}
           isDisabled={isLoading}
           Icon={FiRefreshCw}
         />
