@@ -105,7 +105,6 @@ const ImageCard = ({ photo }: ImageCardProps) => {
           isDisabled={isLoading}
           Icon={FiRefreshCw}
           ariaLabel="Reload"
-          isRotate={isLoading}
         />
       </div>
     </div>
