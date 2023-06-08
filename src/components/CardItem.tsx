@@ -13,7 +13,7 @@ const CardItem = ({
   type,
 }: Bot) => {
   return (
-    <div className="max-w-sm rounded overflow-hidden shadow-lg border-1 border-line transition-transform duration-200 hover:shadow-xl hover:-translate-y-1 focus-within:shadow-xl focus-within:-translate-y-1 cursor-pointer backdrop-brightness-125">
+    <div className="max-w-sm rounded overflow-hidden shadow-lg border-[1px] border-dashed border-[#9ba4b5] transition-transform duration-200 hover:shadow-xl hover:-translate-y-1 focus-within:shadow-xl focus-within:-translate-y-1 cursor-pointer backdrop-brightness-125">
       <Link target="_blank" href={url}>
         <div className="relative h-52 w-full">
           <Image
