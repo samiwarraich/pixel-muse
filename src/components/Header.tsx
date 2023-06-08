@@ -26,7 +26,7 @@ const Header = () => {
             target="_blank"
             className={`hover:text-[${hoverColor}] transition-transform duration-200 hover:shadow-xl hover:-translate-y-1 focus-within:shadow-xl focus-within:-translate-y-1`}
           >
-            <Icon size={16} />
+            <Icon size={18} />
           </Link>
         ))}
       </div>
