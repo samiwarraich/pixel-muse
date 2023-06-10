@@ -24,12 +24,12 @@ const ButtonIcon = ({
       aria-label={ariaLabel}
       className={
         isLoading
-          ? `opacity-50 animate-${
+          ? `opacity-50 ${
               ariaLabel === "reload" && ariaLabel === buttonPressed
-                ? "spin"
+                ? "animate-spin"
                 : ariaLabel === "download" && ariaLabel === buttonPressed
-                ? "ping"
-                : "none"
+                ? "animate-ping"
+                : ""
             }`
           : isDisabled
           ? ` opacity-50 `
