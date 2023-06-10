@@ -33,7 +33,7 @@ const ButtonIcon = ({
             }`
           : isDisabled
           ? ` opacity-50 `
-          : "transition-transform duration-200 hover:shadow-xl hover:-translate-y-1 focus-within:shadow-xl focus-within:-translate-y-1 focus:outline-none cursor-pointer"
+          : "cursor-pointer"
       }
     >
       <Icon size={24} />
