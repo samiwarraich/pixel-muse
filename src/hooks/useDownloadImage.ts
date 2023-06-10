@@ -2,12 +2,17 @@ import { useCallback } from "react";
 
 interface UseDownloadImageProps {
   setError: (error: string) => void;
+  setIsLoading: (error: boolean) => void;
 }
 
-const useDownloadImage = ({ setError }: UseDownloadImageProps) => {
+const useDownloadImage = ({
+  setError,
+  setIsLoading,
+}: UseDownloadImageProps) => {
   const downloadImage = useCallback(
     async (imageUrl: string) => {
       try {
+        setIsLoading(true);
         const response = await fetch(imageUrl);
         if (!response.ok) throw new Error("Failed to download image! 🙁");
         const blob = await response.blob();
@@ -17,13 +22,17 @@ const useDownloadImage = ({ setError }: UseDownloadImageProps) => {
         a.href = url;
         a.download = `pixel-muse-${Date.now()}.png`;
         document.body.appendChild(a);
-        a.click();
-        window.URL.revokeObjectURL(url);
+        setTimeout(() => {
+          a.click();
+          window.URL.revokeObjectURL(url);
+          setIsLoading(false);
+        }, 500);
       } catch (error) {
+        setIsLoading(false);
         if (error instanceof Error) setError(error.message);
       }
     },
-    [setError]
+    [setError, setIsLoading]
   );
 
   return { downloadImage };

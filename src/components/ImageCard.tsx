@@ -1,5 +1,5 @@
 "use client";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import Image from "next/image";
 import { FiDownload, FiRefreshCw } from "react-icons/fi";
 import { usePhoto } from "@/hooks";
@@ -19,6 +19,7 @@ interface ImageCardProps {
 
 const ImageCard = ({ photo }: ImageCardProps) => {
   const imageCardRef = useRef<HTMLDivElement>(null);
+  const [buttonPressed, setButtonPressed] = useState("");
   const {
     imgUrl,
     isLoading,
@@ -36,6 +37,7 @@ const ImageCard = ({ photo }: ImageCardProps) => {
   const handleClick = (clickOn: string, callback: () => void) => {
     callback();
     setClarity("clickOn", clickOn);
+    setButtonPressed(clickOn);
   };
 
   const isDisabled = !!error || isLoading;
@@ -82,7 +84,9 @@ const ImageCard = ({ photo }: ImageCardProps) => {
           onClick={() => handleClick("download", onDownload)}
           isDisabled={isDisabled}
           Icon={FiDownload}
-          ariaLabel="Download"
+          ariaLabel="download"
+          buttonPressed={buttonPressed}
+          isLoading={isLoading}
         />
         <div className="flex w-24 justify-between">
           <ColorPickerIcon
@@ -104,7 +108,9 @@ const ImageCard = ({ photo }: ImageCardProps) => {
           onClick={() => handleClick("reload", onReload)}
           isDisabled={isLoading}
           Icon={FiRefreshCw}
-          ariaLabel="Reload"
+          ariaLabel="reload"
+          buttonPressed={buttonPressed}
+          isLoading={isLoading}
         />
       </div>
     </div>

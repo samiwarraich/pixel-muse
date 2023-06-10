@@ -13,7 +13,7 @@ const usePhoto = ({ photo }: UsePhotoProps) => {
   const [imgUrl, setImgUrl] = useState(isPhoto(photo) ? photo.image : "");
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(!isPhoto(photo) ? photo.error : "");
-  const { downloadImage } = useDownloadImage({ setError });
+  const { downloadImage } = useDownloadImage({ setError, setIsLoading });
   const {
     firstColorHex,
     setFirstColorHex,
