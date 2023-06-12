@@ -26,7 +26,7 @@ const CardItem = ({
               priority
             />
           ) : (
-            <Loader />
+            <Loader height={"60%"} width={"60%"} />
           )}
         </div>
         <div className="px-6 py-4">

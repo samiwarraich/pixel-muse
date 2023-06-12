@@ -49,7 +49,7 @@ const ImageCard = ({ photo }: ImageCardProps) => {
     >
       <div className="relative h-80 w-full">
         {isLoading ? (
-          <Loader />
+          <Loader height={"70%"} width={"70%"} />
         ) : error || !isPhoto(photo) ? (
           <ErrorMsg
             name="image"

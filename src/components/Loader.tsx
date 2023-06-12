@@ -2,7 +2,12 @@ import { memo } from "react";
 import { Lottie } from "@/components";
 import animationData from "../../public/lottie/loader.json";
 
-const Loader = () => {
+interface LoaderProps {
+  height: number | string;
+  width: number | string;
+}
+
+const Loader = ({ height, width }: LoaderProps) => {
   const options = {
     loop: true,
     autoplay: true,
@@ -10,7 +15,7 @@ const Loader = () => {
   };
   return (
     <div className="flex items-center justify-center h-full">
-      <Lottie options={options} height={"70%"} width={"70%"} />
+      <Lottie options={options} height={height} width={width} />
     </div>
   );
 };
