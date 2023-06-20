@@ -16,7 +16,7 @@ const Header = () => {
             priority
           />
         </div>
-        <div className="text-l md:text-xl lg:font-xl font-bold">Pixel Muse</div>
+        <div className="text-xl font-bold">Pixel Muse</div>
       </Link>
       <div className="flex space-x-4">
         {links.map(({ href, icon: Icon, hoverColor }) => (
