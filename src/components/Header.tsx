@@ -5,7 +5,7 @@ import { FaLink, FaTwitter, FaGithub } from "react-icons/fa";
 
 const Header = () => {
   return (
-    <header className="flex items-center justify-between pb-6 mx-4 md:mx-6 lg:mx-8">
+    <header className="flex items-center justify-between pb-4 mx-4 md:mx-6 lg:mx-8">
       <Link href="/" className="flex items-center space-x-2">
         <div className="relative h-12 w-12 rounded-full overflow-hidden">
           <Image
