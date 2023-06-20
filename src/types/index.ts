@@ -14,8 +14,7 @@ interface Config {
 
 interface Photo {
   image: string;
-  firstColor: string;
-  secondColor: string;
+  colors: string[];
   rand: number;
 }
 

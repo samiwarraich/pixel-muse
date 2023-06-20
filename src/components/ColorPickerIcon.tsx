@@ -2,22 +2,22 @@ import { memo } from "react";
 
 interface ColorPickerIconProps {
   color: string;
-  picker: "first" | "second";
-  toggle: (picker: "first" | "second") => void;
+  pickerIndex: number;
+  toggle: (index: number) => void;
   isDisabled: boolean;
   ariaLabel?: string;
 }
 
 const ColorPickerIcon = ({
   color,
-  picker,
+  pickerIndex,
   toggle,
   isDisabled,
   ariaLabel,
 }: ColorPickerIconProps) => {
   return (
     <div
-      className={`w-7 h-7 rounded-full border-2 border-custom-gray ${
+      className={`w-7 h-7 rounded-full border-2 border-custom-gray mx-2 ${
         isDisabled
           ? "opacity-50"
           : "transition-transform duration-200 hover:shadow-xl hover:-translate-y-1 focus-within:shadow-xl focus-within:-translate-y-1 focus:outline-none cursor-pointer"
@@ -25,7 +25,7 @@ const ColorPickerIcon = ({
       style={{
         backgroundColor: color,
       }}
-      onClick={() => toggle(picker)}
+      onClick={() => toggle(pickerIndex)}
       aria-label={ariaLabel}
     />
   );

@@ -26,11 +26,9 @@ const ImageCard = ({ photo }: ImageCardProps) => {
     error,
     onDownload,
     onReload,
-    firstColor,
-    setFirstColor,
-    secondColor,
-    setSecondColor,
-    showColorPicker,
+    colors,
+    setColors,
+    showColorPickers,
     toggleColorPicker,
   } = usePhoto({ photo });
 
@@ -55,24 +53,30 @@ const ImageCard = ({ photo }: ImageCardProps) => {
             name="image"
             message={error || (photo as ErrorData).error}
           />
-        ) : showColorPicker.first ? (
-          <ColorPicker
-            width={imageCardRef?.current?.offsetWidth || 0}
-            show={showColorPicker.first}
-            color={firstColor}
-            setColor={setFirstColor}
-          />
-        ) : showColorPicker.second ? (
-          <ColorPicker
-            width={imageCardRef?.current?.offsetWidth || 0}
-            show={showColorPicker.second}
-            color={secondColor}
-            setColor={setSecondColor}
-          />
+        ) : showColorPickers.some((showColorPicker) => showColorPicker) ? (
+          colors.map((color, index) =>
+            showColorPickers[index] ? (
+              <ColorPicker
+                key={index}
+                width={imageCardRef?.current?.offsetWidth || 0}
+                show={showColorPickers[index]}
+                color={color}
+                setColor={(newColor) =>
+                  setColors((prevColors) =>
+                    prevColors.map((prevColor, i) =>
+                      i === index ? newColor : prevColor
+                    )
+                  )
+                }
+              />
+            ) : null
+          )
         ) : (
           <Image
             src={imgUrl}
-            alt={`A random pixel image with colors: ${firstColor.hex}, ${secondColor.hex}`}
+            alt={`A random pixel image with colors: ${colors
+              .map((color) => color.hex)
+              .join(", ")}`}
             layout="fill"
             objectFit="cover"
             priority
@@ -88,21 +92,17 @@ const ImageCard = ({ photo }: ImageCardProps) => {
           buttonPressed={buttonPressed}
           isLoading={isLoading}
         />
-        <div className="flex w-24 justify-between">
-          <ColorPickerIcon
-            color={firstColor.hex}
-            picker={"first"}
-            toggle={toggleColorPicker}
-            isDisabled={isDisabled}
-            ariaLabel="First Color"
-          />
-          <ColorPickerIcon
-            color={secondColor.hex}
-            picker={"second"}
-            toggle={toggleColorPicker}
-            isDisabled={isDisabled}
-            ariaLabel="Second Color"
-          />
+        <div className="flex justify-center">
+          {colors.map((color, index) => (
+            <ColorPickerIcon
+              key={index}
+              color={color.hex}
+              pickerIndex={index}
+              toggle={toggleColorPicker}
+              isDisabled={isDisabled}
+              ariaLabel={`Color ${index + 1}`}
+            />
+          ))}
         </div>
         <ButtonIcon
           onClick={() => handleClick("reload", onReload)}

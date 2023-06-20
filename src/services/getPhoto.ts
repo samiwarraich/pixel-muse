@@ -2,21 +2,21 @@ import { Photo, ErrorData } from "@/types";
 
 interface GetPhotoProps {
   isClient?: boolean;
-  colorOne?: { r: number; g: number; b: number };
-  colorTwo?: { r: number; g: number; b: number };
+  newColors?: { r: number; g: number; b: number }[];
+  randValue?: number;
 }
 
 export async function getPhoto({
   isClient,
-  colorOne,
-  colorTwo,
+  newColors,
+  randValue,
 }: GetPhotoProps): Promise<Photo | ErrorData> {
   const url = isClient ? process.env.NEXT_PUBLIC_BOT_URL : process.env.BOT_URL;
   const hash = isClient
     ? process.env.NEXT_PUBLIC_WEB_HASH
     : process.env.WEB_HASH;
-
-  const data = { isClient, colorOne, colorTwo };
+  console.log({ newColors, randValue });
+  const data = { isClient, newColors, randValue };
   try {
     const res = await fetch(url as string, {
       method: "POST",
@@ -30,11 +30,10 @@ export async function getPhoto({
       body: JSON.stringify(data),
     });
     if (!res.ok) return { error: "Something went wrong! 🙁" };
-    const { image, firstColor, secondColor, rand } = await res.json();
+    const { image, colors, rand } = await res.json();
     return {
       image,
-      firstColor,
-      secondColor,
+      colors,
       rand,
     };
   } catch (error) {

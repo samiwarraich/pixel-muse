@@ -13,22 +13,20 @@ const usePhoto = ({ photo }: UsePhotoProps) => {
   const [imgUrl, setImgUrl] = useState(isPhoto(photo) ? photo.image : "");
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(!isPhoto(photo) ? photo.error : "");
+  const [rand, setRand] = useState(isPhoto(photo) ? photo.rand : 1);
   const { downloadImage } = useDownloadImage({ setError, setIsLoading });
   const {
-    firstColorHex,
-    setFirstColorHex,
-    secondColorHex,
-    setSecondColorHex,
-    firstColor,
-    setFirstColor,
-    secondColor,
-    setSecondColor,
-    showColorPicker,
-    setShowColorPicker,
+    colors,
+    setColors,
+    colorsHex,
+    setColorsHex,
+    setShowColorPickers,
+    showColorPickers,
     toggleColorPicker,
   } = useColorPicker({
-    initialFirstColor: isPhoto(photo) ? photo.firstColor : "",
-    initialSecondColor: isPhoto(photo) ? photo.secondColor : "",
+    initialColors: isPhoto(photo)
+      ? photo.colors.map((color) => toColor("hex", color))
+      : [],
   });
 
   const onDownload = useCallback(() => {
@@ -38,37 +36,26 @@ const usePhoto = ({ photo }: UsePhotoProps) => {
   const onReload = useCallback(async () => {
     setError("");
     setIsLoading(true);
-    setShowColorPicker({ first: false, second: false });
-    const isDiffColor =
-      firstColor.hex !== firstColorHex || secondColor.hex !== secondColorHex;
-    const photo = await getPhoto({
+    setShowColorPickers(colors.map(() => false));
+    const isDifferent = colors.some(
+      (color, index) => color.hex !== colorsHex[index].hex
+    );
+    const newPhoto = await getPhoto({
       isClient: true,
-      colorOne: isDiffColor ? firstColor.rgb : undefined,
-      colorTwo: isDiffColor ? secondColor.rgb : undefined,
+      newColors: isDifferent ? colors.map(({ rgb: { a, ...rgb } }) => rgb) : [],
+      randValue: isDifferent ? rand : undefined,
     });
-    if (isPhoto(photo)) {
-      setImgUrl(photo.image);
-      setFirstColorHex(photo.firstColor);
-      setSecondColorHex(photo.secondColor);
-      setFirstColor(toColor("hex", photo.firstColor));
-      setSecondColor(toColor("hex", photo.secondColor));
+    if (isPhoto(newPhoto)) {
+      setImgUrl(newPhoto.image);
+      setRand(newPhoto.rand);
+      setColorsHex(newPhoto.colors.map((color) => toColor("hex", color)));
+      setColors(newPhoto.colors.map((color) => toColor("hex", color)));
+      setShowColorPickers(newPhoto.colors.map(() => false));
     } else {
-      setError(photo?.error);
+      setError(newPhoto?.error);
     }
     setIsLoading(false);
-  }, [
-    firstColor.hex,
-    firstColor.rgb,
-    firstColorHex,
-    secondColor.hex,
-    secondColor.rgb,
-    secondColorHex,
-    setFirstColor,
-    setFirstColorHex,
-    setSecondColor,
-    setSecondColorHex,
-    setShowColorPicker,
-  ]);
+  }, [colors, colorsHex, rand, setColors, setColorsHex, setShowColorPickers]);
 
   return useMemo(
     () => ({
@@ -77,11 +64,10 @@ const usePhoto = ({ photo }: UsePhotoProps) => {
       error,
       onDownload,
       onReload,
-      firstColor,
-      setFirstColor,
-      secondColor,
-      setSecondColor,
-      showColorPicker,
+      colors,
+      setColors,
+      showColorPickers,
+      setShowColorPickers,
       toggleColorPicker,
     }),
     [
@@ -90,11 +76,10 @@ const usePhoto = ({ photo }: UsePhotoProps) => {
       error,
       onDownload,
       onReload,
-      firstColor,
-      setFirstColor,
-      secondColor,
-      setSecondColor,
-      showColorPicker,
+      colors,
+      setColors,
+      showColorPickers,
+      setShowColorPickers,
       toggleColorPicker,
     ]
   );
