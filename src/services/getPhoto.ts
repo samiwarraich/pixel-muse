@@ -15,7 +15,7 @@ export async function getPhoto({
   const hash = isClient
     ? process.env.NEXT_PUBLIC_WEB_HASH
     : process.env.WEB_HASH;
-  console.log({ newColors, randValue });
+
   const data = { isClient, newColors, randValue };
   try {
     const res = await fetch(url as string, {
