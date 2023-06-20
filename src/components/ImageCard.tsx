@@ -83,7 +83,7 @@ const ImageCard = ({ photo }: ImageCardProps) => {
           />
         )}
       </div>
-      <div className="px-6 py-4 flex justify-between">
+      <div className="px-5 py-4 flex justify-between">
         <ButtonIcon
           onClick={() => handleClick("download", onDownload)}
           isDisabled={isDisabled}
@@ -92,7 +92,7 @@ const ImageCard = ({ photo }: ImageCardProps) => {
           buttonPressed={buttonPressed}
           isLoading={isLoading}
         />
-        <div className="flex justify-center">
+        <div className="flex justify-center items-center">
           {colors.map((color, index) => (
             <ColorPickerIcon
               key={index}
