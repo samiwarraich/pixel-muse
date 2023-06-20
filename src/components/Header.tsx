@@ -5,7 +5,7 @@ import { FaLink, FaTwitter, FaGithub } from "react-icons/fa";
 
 const Header = () => {
   return (
-    <header className="flex items-center justify-between pb-6 mx-4 lg:mx-8">
+    <header className="flex items-center justify-between pb-6 mx-4 md:mx-6 lg:mx-8">
       <Link href="/" className="flex items-center space-x-2">
         <div className="relative h-12 w-12 rounded-full overflow-hidden">
           <Image
@@ -16,7 +16,7 @@ const Header = () => {
             priority
           />
         </div>
-        <div className="text-xl font-bold">Pixel Muse</div>
+        <div className="text-l md:text-xl lg:font-xl font-bold">Pixel Muse</div>
       </Link>
       <div className="flex space-x-4">
         {links.map(({ href, icon: Icon, hoverColor }) => (
