@@ -43,7 +43,7 @@ const ImageCard = ({ photo }: ImageCardProps) => {
   return (
     <div
       ref={imageCardRef}
-      className="max-w-sm rounded overflow-hidden shadow-lg border-[1px] border-dashed border-foreground-color backdrop-brightness-125"
+      className="max-w-sm rounded overflow-hidden shadow-lg backdrop-brightness-150"
     >
       <div className="relative h-80 w-full">
         {isLoading ? (
