@@ -11,14 +11,9 @@ module.exports = {
         "fira-code": ["var(--font-fira-code)"],
       },
       borderColor: {
-        "custom-gray": "#9ba4b5",
+        "foreground-color": "rgb(var(--foreground-rgb))",
       },
     },
   },
   plugins: [],
-  safelist: [
-    "hover:text-[#ffffff]",
-    "hover:text-[#00acee]",
-    "hover:text-[#000000]",
-  ],
 };

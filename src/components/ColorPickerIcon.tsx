@@ -17,7 +17,7 @@ const ColorPickerIcon = ({
 }: ColorPickerIconProps) => {
   return (
     <div
-      className={`w-7 h-7 rounded-full border-2 border-custom-gray mx-[6px] ${
+      className={`w-7 h-7 rounded-full border-2 border-foreground-color mx-[6px] ${
         isDisabled
           ? "opacity-50"
           : "transition-transform duration-200 hover:shadow-xl hover:-translate-y-1 focus-within:shadow-xl focus-within:-translate-y-1 focus:outline-none cursor-pointer"

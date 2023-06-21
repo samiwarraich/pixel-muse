@@ -15,7 +15,7 @@ const ColorPicker = ({ show, color, setColor, width }: ColorPickerProps) => {
   return (
     <RColorPicker
       width={width}
-      height={200}
+      height={190}
       color={color}
       onChange={setColor}
       hideHSV
