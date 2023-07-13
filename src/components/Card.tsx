@@ -18,23 +18,15 @@ const Card = ({ data, photo }: CardProps) => {
         {!isConfig(data) ? (
           <ErrorMsg name="card" message={data.error} />
         ) : (
-          data.bots.map(
-            (
-              { title, username, url, image, alt, description, type },
-              index
-            ) => (
-              <CardItem
-                key={index}
-                title={title}
-                username={username}
-                url={url}
-                image={image}
-                alt={alt}
-                description={description}
-                type={type}
-              />
-            )
-          )
+          data.bots.map(({ title, username, url, description }, index) => (
+            <CardItem
+              key={index}
+              title={title}
+              username={username}
+              url={url}
+              description={description}
+            />
+          ))
         )}
       </div>
     </div>

@@ -2,10 +2,7 @@ interface Bot {
   title: string;
   username: string;
   url: string;
-  image: string;
-  alt: string;
   description: string;
-  type: string;
 }
 
 interface Config {

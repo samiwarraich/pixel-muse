@@ -10,7 +10,7 @@ const Header = () => {
         <div className="relative h-12 w-12 rounded-full overflow-hidden">
           <Image
             src="/images/pixel-muse-bot.jpeg"
-            alt="pixel muse bot"
+            alt="Pixel Muse Bot"
             layout="fill"
             objectFit="cover"
             priority
