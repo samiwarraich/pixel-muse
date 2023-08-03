@@ -2288,10 +2288,10 @@ rc@^1.2.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
-react-color-palette@^6.2.0:
-  version "6.2.0"
-  resolved "https://registry.yarnpkg.com/react-color-palette/-/react-color-palette-6.2.0.tgz#aa3be88f6953d57502c00f4433692129ffbad3e7"
-  integrity sha512-9rIboaRJNoeF8aCI2f3J8wgMyhl74SnGmZLDjor3bKf0iDBhP2EBv0/jGmm0hrj6OackGCqtWl5ZvM89XUc3sg==
+react-color-palette@^7.0.0:
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/react-color-palette/-/react-color-palette-7.0.0.tgz#6af5d85f9ab78b04740156fce5a4ef90ccf9db50"
+  integrity sha512-NXOFhwwx4aFQXdqViU6YgW3R0LIAaUUWfYMBQPCi7KldhJeKIuxkUNEoxj/NS2umpdKRsKH2ocPUJaOtH9CCiQ==
 
 react-dom@18.2.0:
   version "18.2.0"
