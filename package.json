@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@vercel/analytics": "^1.0.2",
-    "next": "13.4.18",
+    "next": "13.4.19",
     "react": "18.2.0",
     "react-color-palette": "^6.2.0",
     "react-dom": "18.2.0",
