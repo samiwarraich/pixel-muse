@@ -5,11 +5,11 @@ import { firaCode } from "@/utils";
 
 export { metadata } from "@/utils";
 
-export default function RootLayout({
-  children,
-}: {
+interface RootLayoutProps {
   children: React.ReactNode;
-}) {
+}
+
+function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en" className={`${firaCode.variable} font-fira-code`}>
       <body>
@@ -24,3 +24,5 @@ export default function RootLayout({
     </html>
   );
 }
+
+export default RootLayout;

@@ -7,7 +7,7 @@ interface LoaderProps {
   width: number | string;
 }
 
-const Loader = ({ height, width }: LoaderProps) => {
+function Loader({ height, width }: LoaderProps) {
   const options = {
     loop: true,
     autoplay: true,
@@ -18,6 +18,6 @@ const Loader = ({ height, width }: LoaderProps) => {
       <Lottie options={options} height={height} width={width} />
     </div>
   );
-};
+}
 
 export default memo(Loader);

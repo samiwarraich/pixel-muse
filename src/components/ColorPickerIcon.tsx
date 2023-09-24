@@ -8,13 +8,13 @@ interface ColorPickerIconProps {
   ariaLabel?: string;
 }
 
-const ColorPickerIcon = ({
+function ColorPickerIcon({
   color,
   pickerIndex,
   toggle,
   isDisabled,
   ariaLabel,
-}: ColorPickerIconProps) => {
+}: ColorPickerIconProps) {
   return (
     <div
       className={`w-7 h-7 rounded-full border-2 border-foreground-color mx-[6px] ${
@@ -29,6 +29,6 @@ const ColorPickerIcon = ({
       aria-label={ariaLabel}
     />
   );
-};
+}
 
 export default memo(ColorPickerIcon);

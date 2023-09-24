@@ -1,12 +1,12 @@
 import { useState, useCallback, useMemo } from "react";
 import { isPhoto } from "@/utils";
 import { getPhoto } from "@/services";
-import { ErrorData, Photo } from "@/types";
+import { IPhoto, IError } from "@/types";
 import { toColor } from "react-color-palette";
 import { useDownloadImage, useColorPicker } from "@/hooks";
 
 interface UsePhotoProps {
-  photo: Photo | ErrorData;
+  photo: IPhoto | IError;
 }
 
 const usePhoto = ({ photo }: UsePhotoProps) => {

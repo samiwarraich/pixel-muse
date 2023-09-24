@@ -1,22 +1,22 @@
-interface Bot {
+interface IBot {
   title: string;
   username: string;
   url: string;
   description: string;
 }
 
-interface Config {
-  bots: Bot[];
+interface IConfig {
+  bots: IBot[];
 }
 
-interface Photo {
+interface IPhoto {
   image: string;
   colors: string[];
   rand: number;
 }
 
-interface ErrorData {
+interface IError {
   error: string;
 }
 
-export { type Bot, type Config, type Photo, type ErrorData };
+export { type IBot, type IConfig, type IPhoto, type IError };

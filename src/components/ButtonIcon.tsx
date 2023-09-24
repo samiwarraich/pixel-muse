@@ -9,14 +9,14 @@ interface ButtonProps {
   isLoading: boolean;
 }
 
-const ButtonIcon = ({
+function ButtonIcon({
   onClick,
   isDisabled,
   Icon,
   ariaLabel,
   buttonPressed,
   isLoading,
-}: ButtonProps) => {
+}: ButtonProps) {
   return (
     <button
       onClick={onClick}
@@ -39,6 +39,6 @@ const ButtonIcon = ({
       <Icon size={24} />
     </button>
   );
-};
+}
 
 export default memo(ButtonIcon);

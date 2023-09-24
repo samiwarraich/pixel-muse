@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { FaLink, FaTwitter, FaGithub } from "react-icons/fa";
 
-const Header = () => {
+function Header() {
   return (
     <header className="flex items-center justify-between pb-4 md:pb-6 lg:pb-8 xl:pb-8 mx-4 md:mx-6 lg:mx-8 xl:mx-8">
       <Link href="/" className="flex items-center space-x-2">
@@ -32,7 +32,7 @@ const Header = () => {
       </div>
     </header>
   );
-};
+}
 
 export default memo(Header);
 

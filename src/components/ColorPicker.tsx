@@ -1,15 +1,15 @@
 "use client";
 import { memo } from "react";
-import { ColorPicker as RColorPicker } from "react-color-palette";
+import { Color, ColorPicker as RColorPicker } from "react-color-palette";
 
 interface ColorPickerProps {
   show: boolean;
   color: any;
-  setColor: (color: any) => void;
+  setColor: (color: Color) => void;
   width: number;
 }
 
-const ColorPicker = ({ show, color, setColor, width }: ColorPickerProps) => {
+function ColorPicker({ show, color, setColor, width }: ColorPickerProps) {
   if (!show) return null;
 
   return (
@@ -23,6 +23,6 @@ const ColorPicker = ({ show, color, setColor, width }: ColorPickerProps) => {
       dark
     />
   );
-};
+}
 
 export default memo(ColorPicker);

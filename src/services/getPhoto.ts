@@ -1,4 +1,4 @@
-import { Photo, ErrorData } from "@/types";
+import { IPhoto, IError } from "@/types";
 
 interface GetPhotoProps {
   isClient?: boolean;
@@ -10,7 +10,7 @@ export async function getPhoto({
   isClient,
   newColors,
   randValue,
-}: GetPhotoProps): Promise<Photo | ErrorData> {
+}: GetPhotoProps): Promise<IPhoto | IError> {
   const url = isClient ? process.env.NEXT_PUBLIC_BOT_URL : process.env.BOT_URL;
   const hash = isClient
     ? process.env.NEXT_PUBLIC_WEB_HASH

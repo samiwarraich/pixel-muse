@@ -1,6 +1,6 @@
 import Script from "next/script";
 
-const MSClarity = () => {
+function MSClarity() {
   const MS_CLARITY = process.env.NEXT_PUBLIC_MS_CLARITY;
   if (!MS_CLARITY) return null;
   return (
@@ -14,6 +14,6 @@ const MSClarity = () => {
       </Script>
     </>
   );
-};
+}
 
 export default MSClarity;

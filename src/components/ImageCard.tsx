@@ -10,14 +10,14 @@ import {
   ButtonIcon,
   ColorPicker,
 } from "@/components";
-import { ErrorData, Photo } from "@/types";
+import { IError, IPhoto } from "@/types";
 import { isPhoto, setClarity } from "@/utils";
 
 interface ImageCardProps {
-  photo: Photo | ErrorData;
+  photo: IPhoto | IError;
 }
 
-const ImageCard = ({ photo }: ImageCardProps) => {
+function ImageCard({ photo }: ImageCardProps) {
   const imageCardRef = useRef<HTMLDivElement>(null);
   const [buttonPressed, setButtonPressed] = useState("");
   const {
@@ -49,10 +49,7 @@ const ImageCard = ({ photo }: ImageCardProps) => {
         {isLoading ? (
           <Loader height={"70%"} width={"70%"} />
         ) : error || !isPhoto(photo) ? (
-          <ErrorMsg
-            name="image"
-            message={error || (photo as ErrorData).error}
-          />
+          <ErrorMsg name="image" message={error || (photo as IError).error} />
         ) : showColorPickers.some((showColorPicker) => showColorPicker) ? (
           colors.map((color, index) =>
             showColorPickers[index] ? (
@@ -115,6 +112,6 @@ const ImageCard = ({ photo }: ImageCardProps) => {
       </div>
     </div>
   );
-};
+}
 
 export default ImageCard;
