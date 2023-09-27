@@ -19,16 +19,15 @@ function Card({ data, photo }: CardProps) {
           <ErrorMsg name="card" message={data.error} />
         ) : (
           data.bots.map(
-            ({ title, username, url, description, image, imageAlt, type }) => (
+            ({ title, username, url, description, image, imageAlt }, index) => (
               <CardItem
-                key={type}
+                key={index}
                 title={title}
                 username={username}
                 url={url}
                 description={description}
                 image={image}
                 imageAlt={imageAlt}
-                type={type}
               />
             )
           )

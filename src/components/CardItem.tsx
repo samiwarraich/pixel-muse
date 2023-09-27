@@ -10,14 +10,13 @@ function CardItem({
   description,
   image,
   imageAlt,
-  type,
 }: IBot) {
   return (
     <div
       className="max-w-sm rounded overflow-hidden shadow-lg transition-transform duration-200 hover:shadow-xl hover:-translate-y-1 focus-within:shadow-xl focus-within:-translate-y-1 cursor-pointer backdrop-brightness-150"
-      aria-label={type}
+      aria-label={title}
     >
-      <Link target="_blank" href={url} aria-label={url}>
+      <Link target="_blank" href={url} aria-label={username}>
         <div className="relative h-52 w-full">
           <Image
             src={image}
