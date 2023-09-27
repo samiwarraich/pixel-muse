@@ -15,7 +15,7 @@ function CardItem({
   return (
     <div
       className="max-w-sm rounded overflow-hidden shadow-lg transition-transform duration-200 hover:shadow-xl hover:-translate-y-1 focus-within:shadow-xl focus-within:-translate-y-1 cursor-pointer backdrop-brightness-150"
-      aria-label={`${title} ${username} ${description}`}
+      aria-label={ariaLabel}
     >
       <Link target="_blank" href={url}>
         <div className="relative h-52 w-full">
