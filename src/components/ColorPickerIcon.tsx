@@ -17,6 +17,7 @@ function ColorPickerIcon({
 }: ColorPickerIconProps) {
   return (
     <div
+      title={color}
       className={`w-7 h-7 rounded-full border-2 border-foreground-color mx-[6px] ${
         isDisabled
           ? "opacity-50"

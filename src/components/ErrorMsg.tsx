@@ -10,7 +10,7 @@ function ErrorMsg({ name, message }: ErrorMsgProps) {
 
   const styles: { [key: string]: string } = {
     image: "flex items-center justify-center h-full",
-    boundary: "flex justify-center items-center h-screen text-xl",
+    boundary: "flex justify-center items-center h-3/4 text-xl",
     card: "max-w-sm rounded overflow-hidden shadow-lg border-1 border-line backdrop-brightness-125",
   };
 

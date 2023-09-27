@@ -80,7 +80,7 @@ function ImageCard({ photo }: ImageCardProps) {
           />
         )}
       </div>
-      <div className="px-5 py-4 flex justify-between">
+      <div className="px-5 py-3 flex justify-between">
         <ButtonIcon
           onClick={() => handleClick("download", onDownload)}
           isDisabled={isDisabled}
