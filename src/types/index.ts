@@ -1,5 +1,6 @@
 interface ISocialLink {
   link: string;
+  title: string;
   icon: string;
   iconSize: number;
 }

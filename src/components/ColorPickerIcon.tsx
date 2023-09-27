@@ -21,7 +21,7 @@ function ColorPickerIcon({
       className={`w-7 h-7 rounded-full border-2 border-foreground-color mx-[6px] ${
         isDisabled
           ? "opacity-50"
-          : "transition-transform duration-200 hover:shadow-xl hover:-translate-y-1 focus-within:shadow-xl focus-within:-translate-y-1 focus:outline-none cursor-pointer"
+          : "transition-all duration-200 shadow-md hover:shadow-lg hover:scale-[1.15] focus-within:shadow-lg focus-within:scale-[1.15] focus:outline-none cursor-pointer"
       }`}
       style={{
         backgroundColor: color,

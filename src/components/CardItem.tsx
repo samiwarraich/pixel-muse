@@ -14,7 +14,7 @@ function CardItem({
 }: IBot) {
   return (
     <div
-      className="max-w-sm rounded overflow-hidden shadow-lg transition-transform duration-200 hover:shadow-xl hover:-translate-y-1 focus-within:shadow-xl focus-within:-translate-y-1 cursor-pointer backdrop-brightness-150"
+      className="max-w-sm rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-200 hover:scale-[1.03] focus-within:shadow-lg focus-within:scale-[1.03] cursor-pointer backdrop-brightness-150"
       aria-label={ariaLabel}
     >
       <Link target="_blank" href={url}>

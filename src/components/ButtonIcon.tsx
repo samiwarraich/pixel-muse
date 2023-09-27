@@ -33,7 +33,7 @@ function ButtonIcon({
             }`
           : isDisabled
           ? ` opacity-50 `
-          : "cursor-pointer"
+          : "transition-all duration-200 shadow-md hover:shadow-lg hover:scale-[1.15] focus-within:shadow-lg focus-within:scale-[1.15] focus:outline-none"
       }
     >
       <Icon size={24} />
