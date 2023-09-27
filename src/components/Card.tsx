@@ -18,15 +18,20 @@ function Card({ data, photo }: CardProps) {
         {!isConfig(data) ? (
           <ErrorMsg name="card" message={data.error} />
         ) : (
-          data.bots.map(({ title, username, url, description }, index) => (
-            <CardItem
-              key={index}
-              title={title}
-              username={username}
-              url={url}
-              description={description}
-            />
-          ))
+          data.bots.map(
+            ({ title, username, url, description, image, imageAlt, type }) => (
+              <CardItem
+                key={type}
+                title={title}
+                username={username}
+                url={url}
+                description={description}
+                image={image}
+                imageAlt={imageAlt}
+                type={type}
+              />
+            )
+          )
         )}
       </div>
     </div>

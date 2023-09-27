@@ -27,6 +27,7 @@ function ColorPickerIcon({
       }}
       onClick={() => toggle(pickerIndex)}
       aria-label={ariaLabel}
+      role="button"
     />
   );
 }

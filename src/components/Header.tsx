@@ -1,7 +1,8 @@
 import { memo } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { FaLink, FaTwitter, FaGithub } from "react-icons/fa";
+import * as FaIcons from "react-icons/fa";
+import { ISocialLink } from "@/types";
 
 function Header() {
   return (
@@ -19,16 +20,20 @@ function Header() {
         <div className="text-xl font-bold">Pixel Muse</div>
       </Link>
       <div className="flex space-x-4">
-        {links.map(({ href, icon: Icon }) => (
-          <Link
-            key={href}
-            href={href}
-            target="_blank"
-            className={`transition-transform duration-200 hover:shadow-xl hover:-translate-y-1 focus-within:shadow-xl focus-within:-translate-y-1`}
-          >
-            <Icon size={16} />
-          </Link>
-        ))}
+        {socialLinks.map(({ link, icon, iconSize }: ISocialLink) => {
+          const Icon = FaIcons[icon as keyof typeof FaIcons];
+          return (
+            <Link
+              key={link}
+              href={link}
+              target="_blank"
+              className={`transition-transform duration-200 hover:shadow-xl hover:-translate-y-1 focus-within:shadow-xl focus-within:-translate-y-1`}
+              aria-label={link}
+            >
+              <Icon size={iconSize} />
+            </Link>
+          );
+        })}
       </div>
     </header>
   );
@@ -36,17 +41,20 @@ function Header() {
 
 export default memo(Header);
 
-const links = [
+const socialLinks = [
   {
-    href: "https://samiwarraich.github.io",
-    icon: FaLink,
+    link: "https://samiwarraich.github.io",
+    icon: "FaLink",
+    iconSize: 16,
   },
   {
-    href: "https://twitter.com/samiwarra1ch",
-    icon: FaTwitter,
+    link: "https://twitter.com/samiwarra1ch",
+    icon: "FaTwitter",
+    iconSize: 16,
   },
   {
-    href: "https://github.com/samiwarraich",
-    icon: FaGithub,
+    link: "https://github.com/samiwarraich",
+    icon: "FaGithub",
+    iconSize: 16,
   },
 ];

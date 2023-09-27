@@ -1,8 +1,17 @@
+interface ISocialLink {
+  link: string;
+  icon: string;
+  iconSize: number;
+}
+
 interface IBot {
   title: string;
   username: string;
   url: string;
   description: string;
+  image: string;
+  imageAlt: string;
+  type: string;
 }
 
 interface IConfig {
@@ -19,4 +28,4 @@ interface IError {
   error: string;
 }
 
-export { type IBot, type IConfig, type IPhoto, type IError };
+export { type ISocialLink, type IBot, type IConfig, type IPhoto, type IError };

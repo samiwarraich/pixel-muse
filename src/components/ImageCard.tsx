@@ -97,7 +97,7 @@ function ImageCard({ photo }: ImageCardProps) {
               pickerIndex={index}
               toggle={toggleColorPicker}
               isDisabled={isDisabled}
-              ariaLabel={`Color ${index + 1}`}
+              ariaLabel={color.hex}
             />
           ))}
         </div>
