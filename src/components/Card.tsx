@@ -19,7 +19,10 @@ function Card({ data, photo }: CardProps) {
           <ErrorMsg name="card" message={data.error} />
         ) : (
           data.bots.map(
-            ({ title, username, url, description, image, imageAlt }, index) => (
+            (
+              { title, username, url, description, image, imageAlt, ariaLabel },
+              index
+            ) => (
               <CardItem
                 key={index}
                 title={title}
@@ -28,6 +31,7 @@ function Card({ data, photo }: CardProps) {
                 description={description}
                 image={image}
                 imageAlt={imageAlt}
+                ariaLabel={ariaLabel}
               />
             )
           )

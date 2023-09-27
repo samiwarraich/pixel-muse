@@ -11,6 +11,7 @@ interface IBot {
   description: string;
   image: string;
   imageAlt: string;
+  ariaLabel: string;
 }
 
 interface IConfig {
