@@ -19,7 +19,7 @@ function ButtonIcon({
 }: ButtonProps) {
   return (
     <button
-      title={ariaLabel.charAt(0).toUpperCase() + ariaLabel.slice(1)}
+      title={`${ariaLabel[0].toUpperCase()}${ariaLabel.slice(1)}`}
       onClick={onClick}
       disabled={isDisabled}
       aria-label={ariaLabel}
