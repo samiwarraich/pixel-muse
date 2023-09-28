@@ -1,7 +1,9 @@
+import { IconType } from "react-icons";
+
 interface ISocialLink {
   link: string;
   title: string;
-  icon: string;
+  icon: IconType;
   iconSize: number;
 }
 
