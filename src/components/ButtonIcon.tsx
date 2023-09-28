@@ -4,7 +4,7 @@ interface ButtonProps {
   onClick: () => void;
   isDisabled: boolean;
   Icon: React.ElementType;
-  ariaLabel?: string;
+  ariaLabel: string;
   buttonPressed: string;
   isLoading: boolean;
 }
@@ -19,6 +19,7 @@ function ButtonIcon({
 }: ButtonProps) {
   return (
     <button
+      title={ariaLabel.charAt(0).toUpperCase() + ariaLabel.slice(1)}
       onClick={onClick}
       disabled={isDisabled}
       aria-label={ariaLabel}
