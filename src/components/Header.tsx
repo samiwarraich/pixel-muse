@@ -28,7 +28,7 @@ function Header() {
                 key={link}
                 href={link}
                 target="_blank"
-                className={`transition-all duration-200 shadow-md hover:shadow-lg hover:scale-125 focus-within:shadow-lg focus-within:scale-125`}
+                className={`transition-all duration-200 hover:scale-125 focus-within:shadow-lg focus-within:scale-125`}
                 aria-label={link}
               >
                 <Icon size={iconSize} />
