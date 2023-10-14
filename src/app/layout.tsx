@@ -13,13 +13,13 @@ function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en" className={`${firaCode.variable} font-fira-code`}>
       <body>
-        <div className="container mx-auto m-4 h-screen">
+        <main className="container mx-auto m-4 h-screen">
           <Header />
           {children}
           <Analytics />
           <MSClarity />
           <Footer />
-        </div>
+        </main>
       </body>
     </html>
   );

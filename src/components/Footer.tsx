@@ -1,9 +1,18 @@
 import { memo } from "react";
+import Link from "next/link";
 
 function Footer() {
   return (
-    <footer className="px-4 py-8">
-      <div className="mx-auto text-center">{`© ${new Date().getFullYear()} Pixel Muse.`}</div>
+    <footer className="py-8">
+      <div className="flex flex-col sm:flex-row justify-center text-center text-sm space-y-2 sm:space-y-0 sm:space-x-2">
+        <div>
+          <Link href="/privacy-policy" className="hover:underline">
+            Privacy
+          </Link>
+        </div>
+        <div className="hidden sm:block">·</div>
+        <div>{`Pixel Muse © ${new Date().getFullYear()}`}</div>
+      </div>
     </footer>
   );
 }
