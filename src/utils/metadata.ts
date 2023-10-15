@@ -1,10 +1,16 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Pixel Muse",
+  title: {
+    template: "%s | Pixel Muse",
+    default: "Pixel Muse",
+  },
   description:
     "Pixel Muse is a suite of bots that create and share random color pixel images on Twitter and Telegram platforms. You can enjoy these beautiful images every day by following the bots on social media or requesting them via messages or mentions.",
   metadataBase: new URL("https://pixel-muse.vercel.app"),
+  alternates: {
+    canonical: "/",
+  },
   twitter: {
     card: "summary_large_image",
     title: "Pixel Muse",
@@ -16,16 +22,12 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    url: "https://pixel-muse.vercel.app",
+    url: "/",
     title: "Pixel Muse",
     description:
       "Pixel Muse is a suite of bots that create and share random color pixel images on Twitter and Telegram platforms. You can enjoy these beautiful images every day by following the bots on social media or requesting them via messages or mentions.",
     siteName: "Pixel Muse",
-    images: [
-      {
-        url: "/images/pixel-muse-bot.jpeg",
-      },
-    ],
+    images: "/images/pixel-muse-bot.jpeg",
   },
   robots: "all",
   keywords: [
