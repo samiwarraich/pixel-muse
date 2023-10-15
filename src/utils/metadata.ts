@@ -1,24 +1,21 @@
 import { Metadata } from "next";
 
+const title = "Pixel Muse";
+const description =
+  "Pixel Muse is a suite of bots that create and share random color pixel images on Twitter and Telegram platforms. You can enjoy these beautiful images every day by following the bots on social media or requesting them via messages or mentions.";
+
 export const metadata: Metadata = {
-  title: {
-    template: "%s | Pixel Muse",
-    default: "Pixel Muse",
-  },
-  description:
-    "Pixel Muse is a suite of bots that create and share random color pixel images on Twitter and Telegram platforms. You can enjoy these beautiful images every day by following the bots on social media or requesting them via messages or mentions.",
+  title,
+  description,
+  applicationName: "Pixel Muse",
   metadataBase: new URL("https://pixel-muse.vercel.app"),
   alternates: {
     canonical: "/",
   },
   twitter: {
     card: "summary_large_image",
-    title: {
-      template: "%s | Pixel Muse",
-      default: "Pixel Muse",
-    },
-    description:
-      "Pixel Muse is a suite of bots that create and share random color pixel images on Twitter and Telegram platforms. You can enjoy these beautiful images every day by following the bots on social media or requesting them via messages or mentions.",
+    title,
+    description,
     site: "@PixelMuseBot",
     creator: "@samiwarra1ch",
     images: "/images/pixel-muse-bot.jpeg",
@@ -26,12 +23,8 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/",
-    title: {
-      template: "%s | Pixel Muse",
-      default: "Pixel Muse",
-    },
-    description:
-      "Pixel Muse is a suite of bots that create and share random color pixel images on Twitter and Telegram platforms. You can enjoy these beautiful images every day by following the bots on social media or requesting them via messages or mentions.",
+    title,
+    description,
     siteName: "Pixel Muse",
     images: "/images/pixel-muse-bot.jpeg",
   },
