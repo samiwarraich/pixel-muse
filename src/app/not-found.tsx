@@ -2,6 +2,12 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "404",
+  twitter: {
+    title: "404",
+  },
+  openGraph: {
+    title: "404",
+  },
 };
 
 function NotFound() {

@@ -5,6 +5,12 @@ import { isConfig, isPhoto } from "@/utils";
 
 export const metadata: Metadata = {
   title: "Home",
+  twitter: {
+    title: "Home",
+  },
+  openGraph: {
+    title: "Home",
+  },
 };
 
 async function Home() {
