@@ -1,4 +1,3 @@
-import { memo } from "react";
 import Link from "next/link";
 
 function PrivacyPolicy() {
@@ -26,7 +25,7 @@ function PrivacyPolicy() {
       <p className="text-sm">
         The information we collect is used for various purposes:
       </p>
-      <ul className="list-disc list-inside my-2 text-sm pl-5">
+      <ul className="list-disc list-outside text-sm my-2 pl-8">
         <li>
           <strong>Service Provision:</strong> We use the collected information
           to provide and maintain our service, ensuring an optimal user
@@ -79,4 +78,4 @@ function PrivacyPolicy() {
   );
 }
 
-export default memo(PrivacyPolicy);
+export default PrivacyPolicy;
