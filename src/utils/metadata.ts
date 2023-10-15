@@ -13,7 +13,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Pixel Muse",
+    title: {
+      template: "%s | Pixel Muse",
+      default: "Pixel Muse",
+    },
     description:
       "Pixel Muse is a suite of bots that create and share random color pixel images on Twitter and Telegram platforms. You can enjoy these beautiful images every day by following the bots on social media or requesting them via messages or mentions.",
     site: "@PixelMuseBot",
@@ -23,7 +26,10 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/",
-    title: "Pixel Muse",
+    title: {
+      template: "%s | Pixel Muse",
+      default: "Pixel Muse",
+    },
     description:
       "Pixel Muse is a suite of bots that create and share random color pixel images on Twitter and Telegram platforms. You can enjoy these beautiful images every day by following the bots on social media or requesting them via messages or mentions.",
     siteName: "Pixel Muse",
