@@ -14,12 +14,32 @@ export default function manifest(): MetadataRoute.Manifest {
       {
         src: "./images/favicon.png",
         type: "image/png",
-        sizes: "192x192",
+        sizes: "72x72",
       },
       {
         src: "./images/favicon.png",
         type: "image/png",
-        sizes: "512x512",
+        sizes: "96x96",
+      },
+      {
+        src: "./images/favicon.png",
+        type: "image/png",
+        sizes: "120x120",
+      },
+      {
+        src: "./images/favicon.png",
+        type: "image/png",
+        sizes: "144x144",
+      },
+      {
+        src: "./images/favicon.png",
+        type: "image/png",
+        sizes: "180x180",
+      },
+      {
+        src: "./images/favicon.png",
+        type: "image/png",
+        sizes: "192x192",
       },
     ],
   };
