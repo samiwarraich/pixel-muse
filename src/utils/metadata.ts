@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     description,
     site: "@PixelMuseBot",
     creator: "@samiwarra1ch",
-    images: "/images/pixel-muse-bot.jpeg",
+    images: "/images/pixel-muse-bot.png",
   },
   openGraph: {
     type: "website",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     title,
     description,
     siteName: "Pixel Muse",
-    images: "/images/pixel-muse-bot.jpeg",
+    images: "/images/pixel-muse-bot.png",
   },
   robots: "all",
   keywords: [
