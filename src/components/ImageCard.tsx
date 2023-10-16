@@ -76,6 +76,7 @@ function ImageCard({ photo }: ImageCardProps) {
               .join(", ")}`}
             layout="fill"
             objectFit="cover"
+            priority
           />
         )}
       </div>
