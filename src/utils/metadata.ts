@@ -51,20 +51,21 @@ export const metadata: Metadata = {
     "p:domain_verify": "5d40bb6cf120718969b9be1519543e7e",
   },
   icons: [
-    { rel: "apple-touch-icon", sizes: "120x120", url: "./images/favicon.png" },
+    { rel: "apple-touch-icon", sizes: "120x120", url: "/images/favicon.png" },
     {
       rel: "icon",
       sizes: "32x32",
       type: "image/png",
-      url: "./images/favicon.png",
+      url: "/images/favicon.png",
     },
     {
       rel: "icon",
       sizes: "16x16",
       type: "image/png",
-      url: "./images/favicon.png",
+      url: "/images/favicon.png",
     },
   ],
+  manifest: "/manifest.webmanifest",
   viewport: "width=device-width, initial-scale=1.0",
   authors: [{ name: "Sami Warraich", url: "https://samiwarraich.github.io" }],
 };
