@@ -59,7 +59,7 @@ export const metadata: Metadata = {
     {
       rel: "icon",
       sizes:
-        "48x48 72x72 96x96 128x128 144x144 152x152 192x192 384x384 512x512",
+        "16x16 32x32 48x48 72x72 96x96 128x128 144x144 152x152 192x192 384x384 512x512",
       type: "image/png",
       url: "/images/favicon.png",
     },
