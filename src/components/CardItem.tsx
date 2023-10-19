@@ -20,10 +20,10 @@ function CardItem({
       <Link target="_blank" href={url}>
         <div className="relative h-52 w-full">
           <Image
+            className="object-cover"
             src={image}
             alt={imageAlt}
-            layout="fill"
-            objectFit="cover"
+            fill
             priority
           />
         </div>
