@@ -29,6 +29,10 @@ export async function getPhoto({
       },
       body: JSON.stringify(data),
     });
+    if (res.status === 429)
+      return {
+        error: "🚦Slow down! Too many requests. Try again later. ⏳",
+      };
     if (!res.ok) return { error: "Something went wrong! 🙁" };
     const { image, colors, rand } = await res.json();
     return {

@@ -9,9 +9,9 @@ function ErrorMsg({ name, message }: ErrorMsgProps) {
   if (!name || !message) return null;
 
   const styles: { [key: string]: string } = {
-    image: "flex items-center justify-center h-full",
+    image: "flex items-center justify-center h-full px-5 text-center",
     boundary: "flex justify-center items-center h-3/4 text-xl",
-    card: "max-w-sm rounded-lg overflow-hidden shadow-md hover:shadow-lg backdrop-brightness-150",
+    card: "max-w-sm rounded-lg overflow-hidden shadow-md hover:shadow-lg backdrop-brightness-150 px-5 text-center",
   };
 
   const style = styles[name];
