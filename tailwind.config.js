@@ -11,7 +11,8 @@ module.exports = {
         "fira-code": ["var(--font-fira-code)"],
       },
       borderColor: {
-        "foreground-color": "rgb(var(--foreground-rgb))",
+        "custom-border": "rgb(var(--foreground-rgb))",
+        "custom-card-border": "rgb(var(--card-border))",
       },
     },
   },

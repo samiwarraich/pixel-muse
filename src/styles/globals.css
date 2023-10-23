@@ -3,8 +3,9 @@
 @tailwind utilities;
 
 :root {
-  --background-rgb: 28, 35, 49;
-  --foreground-rgb: 207, 216, 220;
+  --background-rgb: 21, 23, 24;
+  --foreground-rgb: 155, 161, 165;
+  --card-border:50, 55, 58;
 }
 
 body {
