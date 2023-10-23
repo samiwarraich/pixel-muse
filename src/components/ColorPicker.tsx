@@ -1,5 +1,4 @@
 "use client";
-import "@/styles/ColorPicker.css";
 import { memo } from "react";
 import { Color, ColorPicker as RColorPicker } from "react-color-palette";
 
