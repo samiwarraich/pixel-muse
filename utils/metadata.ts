@@ -67,4 +67,5 @@ export const metadata: Metadata = {
   manifest: "/manifest.webmanifest",
   viewport: "width=device-width, initial-scale=1.0",
   authors: [{ name: "Sami Warraich", url: "https://samiwarraich.github.io" }],
+  themeColor: "#151718",
 };
