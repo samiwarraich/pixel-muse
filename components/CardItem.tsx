@@ -17,7 +17,7 @@ function CardItem({
       className="max-w-sm rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-200 hover:scale-[1.03] focus-within:shadow-lg focus-within:scale-[1.03] cursor-pointer backdrop-brightness-125 border border-custom-card-border"
       aria-label={ariaLabel}
     >
-      <Link target="_blank" href={url}>
+      <Link target="_blank" href={url} className="focus:outline-none">
         <div className="relative h-52 w-full">
           <Image
             className="object-cover"
