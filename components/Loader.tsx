@@ -1,6 +1,6 @@
 import { memo } from "react";
 import { Lottie } from "@/components";
-import animationData from "../public/lottie/loader.json";
+import animationData from "@/public/lottie/loader.json";
 
 interface LoaderProps {
   height: number | string;
