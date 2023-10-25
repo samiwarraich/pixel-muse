@@ -7,7 +7,7 @@ function Footer() {
         <div>
           <Link
             href="/privacy-policy"
-            className="hover:underline focus:outline-none select-none"
+            className="hover:underline focus:outline-none"
             draggable={false}
           >
             Privacy
