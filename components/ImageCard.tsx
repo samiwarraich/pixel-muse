@@ -74,9 +74,9 @@ function ImageCard({ photo }: ImageCardProps) {
             alt={`A random pixel image with colors: ${colors
               .map((color) => color.hex)
               .join(", ")}`}
-            layout="fill"
-            objectFit="cover"
+            fill
             priority
+            className="object-cover pointer-events-none select-none"
           />
         )}
       </div>

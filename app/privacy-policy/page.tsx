@@ -7,7 +7,11 @@ function PrivacyPolicy() {
       <h2 className="text-md font-bold my-2">Introduction</h2>
       <p className="text-sm">
         Welcome to{" "}
-        <Link href="/" className="hover:underline">
+        <Link
+          href="/"
+          className="hover:underline select-none"
+          draggable={false}
+        >
           <strong>Pixel Muse</strong>
         </Link>
         . We are committed to respecting and protecting your privacy. This
@@ -68,7 +72,8 @@ function PrivacyPolicy() {
         don&apos;t hesitate to{" "}
         <Link
           href="mailto:samiwarraich51@gmail.com"
-          className="hover:underline"
+          className="hover:underline select-none"
+          draggable={false}
         >
           <strong>contact</strong>
         </Link>{" "}
