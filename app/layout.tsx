@@ -1,6 +1,5 @@
 import "@/styles/globals.css";
-import { Analytics } from "@vercel/analytics/react";
-import { Header, Footer, MSClarity } from "@/components";
+import { Header, Footer, MSClarity, Analytics } from "@/components";
 import { firaCode } from "@/utils";
 
 export { metadata } from "@/utils";
