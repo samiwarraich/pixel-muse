@@ -2,7 +2,7 @@ import { Card, ErrorMsg } from "@/components";
 import { getConfig, getPhoto } from "@/services";
 import { isConfig, isPhoto } from "@/utils";
 
-async function Home() {
+export default async function Home() {
   const config = await getConfig();
   const photo = await getPhoto({ isClient: true });
   if (!isConfig(config) && !isPhoto(photo)) {
@@ -15,5 +15,3 @@ async function Home() {
     </div>
   );
 }
-
-export default Home;

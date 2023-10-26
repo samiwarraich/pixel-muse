@@ -8,7 +8,7 @@ interface RootLayoutProps {
   children: React.ReactNode;
 }
 
-function RootLayout({ children }: RootLayoutProps) {
+export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en" className={`${firaCode.variable} font-fira-code`}>
       <body>
@@ -23,5 +23,3 @@ function RootLayout({ children }: RootLayoutProps) {
     </html>
   );
 }
-
-export default RootLayout;

@@ -9,7 +9,7 @@ interface ColorPickerProps {
   width: number;
 }
 
-function ColorPicker({ show, color, setColor, width }: ColorPickerProps) {
+const ColorPicker = ({ show, color, setColor, width }: ColorPickerProps) => {
   if (!show) return null;
 
   return (
@@ -23,6 +23,6 @@ function ColorPicker({ show, color, setColor, width }: ColorPickerProps) {
       dark
     />
   );
-}
+};
 
 export default memo(ColorPicker);

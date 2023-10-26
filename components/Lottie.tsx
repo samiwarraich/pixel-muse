@@ -8,12 +8,12 @@ interface LottieProps {
   width: number | string;
 }
 
-function Lottie({ options, height, width }: LottieProps) {
+const Lottie = ({ options, height, width }: LottieProps) => {
   return (
     <div className="pointer-events-none cursor-default">
       <RLottie options={options} height={height} width={width} />
     </div>
   );
-}
+};
 
 export default memo(Lottie);

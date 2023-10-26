@@ -6,11 +6,11 @@ interface GetPhotoProps {
   randValue?: number;
 }
 
-export async function getPhoto({
+export const getPhoto = async ({
   isClient,
   newColors,
   randValue,
-}: GetPhotoProps): Promise<IPhoto | IError> {
+}: GetPhotoProps): Promise<IPhoto | IError> => {
   const url = isClient ? process.env.NEXT_PUBLIC_BOT_URL : process.env.BOT_URL;
   const hash = isClient
     ? process.env.NEXT_PUBLIC_WEB_HASH
@@ -44,4 +44,4 @@ export async function getPhoto({
     console.error(error);
     return { error: "Something went wrong! 🙁" };
   }
-}
+};

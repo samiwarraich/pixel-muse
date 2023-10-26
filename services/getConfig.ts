@@ -1,6 +1,6 @@
 import { IConfig, IError } from "@/types";
 
-export async function getConfig(): Promise<IConfig | IError> {
+export const getConfig = async (): Promise<IConfig | IError> => {
   try {
     const res = await fetch(process.env.EDGE_CONFIG as string, {
       next: {
@@ -15,4 +15,4 @@ export async function getConfig(): Promise<IConfig | IError> {
     console.error(error);
     return { error: "Something went wrong! 🙁" };
   }
-}
+};

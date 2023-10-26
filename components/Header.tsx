@@ -4,7 +4,7 @@ import { Image } from "@/components";
 import { socialLinks } from "@/utils";
 import { ISocialLink } from "@/types";
 
-function Header() {
+const Header = () => {
   return (
     <header className="flex items-center justify-between pb-4 md:pb-6 lg:pb-8 xl:pb-8 mx-4 md:mx-6 lg:mx-8 xl:mx-8">
       <Link
@@ -38,6 +38,6 @@ function Header() {
       </div>
     </header>
   );
-}
+};
 
 export default memo(Header);

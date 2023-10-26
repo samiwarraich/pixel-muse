@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-function PrivacyPolicy() {
+export default function PrivacyPolicy() {
   return (
     <div className="px-8 md:px-16 lg:px-24 xl:px-24 leading-relaxed">
       <h1 className="text-lg font-bold mb-2">Privacy Policy</h1>
@@ -78,5 +78,3 @@ function PrivacyPolicy() {
     </div>
   );
 }
-
-export default PrivacyPolicy;

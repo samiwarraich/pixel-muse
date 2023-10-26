@@ -3,7 +3,7 @@ import { Image } from "@/components";
 import Link from "next/link";
 import { IBot } from "@/types";
 
-function CardItem({
+const CardItem = ({
   title,
   username,
   url,
@@ -11,7 +11,7 @@ function CardItem({
   image,
   imageAlt,
   ariaLabel,
-}: IBot) {
+}: IBot) => {
   return (
     <div
       className="max-w-sm rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-200 hover:scale-[1.03] focus-within:shadow-lg focus-within:scale-[1.03] cursor-pointer backdrop-brightness-125 border border-custom-card-border"
@@ -34,6 +34,6 @@ function CardItem({
       </Link>
     </div>
   );
-}
+};
 
 export default memo(CardItem);

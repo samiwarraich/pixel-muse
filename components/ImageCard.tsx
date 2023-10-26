@@ -1,23 +1,15 @@
 "use client";
 import { useRef, useState } from "react";
-import { FiDownload, FiRefreshCw } from "react-icons/fi";
+import { ImageDisplay, ImageActionPanel } from "@/components";
 import { usePhoto } from "@/hooks";
-import {
-  ErrorMsg,
-  Loader,
-  ColorPickerIcon,
-  ButtonIcon,
-  ColorPicker,
-  Image,
-} from "@/components";
 import { IError, IPhoto } from "@/types";
-import { isPhoto, setClarity } from "@/utils";
+import { setClarity } from "@/utils";
 
 interface ImageCardProps {
   photo: IPhoto | IError;
 }
 
-function ImageCard({ photo }: ImageCardProps) {
+const ImageCard = ({ photo }: ImageCardProps) => {
   const imageCardRef = useRef<HTMLDivElement>(null);
   const [buttonPressed, setButtonPressed] = useState("");
   const {
@@ -46,69 +38,31 @@ function ImageCard({ photo }: ImageCardProps) {
       className="max-w-sm rounded-lg overflow-hidden shadow-md hover:shadow-lg backdrop-brightness-125 border border-custom-card-border"
     >
       <div className="relative h-80 w-full">
-        {isLoading ? (
-          <Loader height={"70%"} width={"70%"} />
-        ) : error || !isPhoto(photo) ? (
-          <ErrorMsg name="image" message={error || (photo as IError).error} />
-        ) : showColorPickers.some((showColorPicker) => showColorPicker) ? (
-          colors.map((color, index) =>
-            showColorPickers[index] ? (
-              <ColorPicker
-                key={index}
-                width={imageCardRef?.current?.offsetWidth || 0}
-                show={showColorPickers[index]}
-                color={color}
-                setColor={(newColor) =>
-                  setColors((prevColors) =>
-                    prevColors.map((prevColor, i) =>
-                      i === index ? newColor : prevColor
-                    )
-                  )
-                }
-              />
-            ) : null
-          )
-        ) : (
-          <Image
-            src={imgUrl}
-            alt={`A random pixel image with colors: ${colors
-              .map((color) => color.hex)
-              .join(", ")}`}
-          />
-        )}
+        <ImageDisplay
+          isLoading={isLoading}
+          error={error}
+          photo={photo}
+          showColorPickers={showColorPickers}
+          colors={colors}
+          imageCardRef={imageCardRef}
+          setColors={setColors}
+          imgUrl={imgUrl}
+        />
       </div>
       <div className="px-5 py-3 flex justify-between">
-        <ButtonIcon
-          onClick={() => handleClick("download", onDownload)}
+        <ImageActionPanel
+          handleClick={handleClick}
+          onDownload={onDownload}
           isDisabled={isDisabled}
-          Icon={FiDownload}
-          ariaLabel="download"
           buttonPressed={buttonPressed}
           isLoading={isLoading}
-        />
-        <div className="flex justify-center items-center">
-          {colors.map((color, index) => (
-            <ColorPickerIcon
-              key={index}
-              color={color.hex}
-              pickerIndex={index}
-              toggle={toggleColorPicker}
-              isDisabled={isDisabled}
-              ariaLabel={color.hex}
-            />
-          ))}
-        </div>
-        <ButtonIcon
-          onClick={() => handleClick("reload", onReload)}
-          isDisabled={isLoading}
-          Icon={FiRefreshCw}
-          ariaLabel="reload"
-          buttonPressed={buttonPressed}
-          isLoading={isLoading}
+          colors={colors}
+          toggleColorPicker={toggleColorPicker}
+          onReload={onReload}
         />
       </div>
     </div>
   );
-}
+};
 
 export default ImageCard;

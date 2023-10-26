@@ -5,7 +5,7 @@ interface ErrorMsgProps {
   message: string;
 }
 
-function ErrorMsg({ name, message }: ErrorMsgProps) {
+const ErrorMsg = ({ name, message }: ErrorMsgProps) => {
   if (!name || !message) return null;
 
   const styles: { [key: string]: string } = {
@@ -29,6 +29,6 @@ function ErrorMsg({ name, message }: ErrorMsgProps) {
       )}
     </div>
   );
-}
+};
 
 export default memo(ErrorMsg);

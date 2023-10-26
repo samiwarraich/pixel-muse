@@ -9,14 +9,14 @@ interface ButtonProps {
   isLoading: boolean;
 }
 
-function ButtonIcon({
+const ButtonIcon = ({
   onClick,
   isDisabled,
   Icon,
   ariaLabel,
   buttonPressed,
   isLoading,
-}: ButtonProps) {
+}: ButtonProps) => {
   return (
     <button
       title={`${ariaLabel[0].toUpperCase()}${ariaLabel.slice(1)}`}
@@ -40,6 +40,6 @@ function ButtonIcon({
       <Icon size={24} />
     </button>
   );
-}
+};
 
 export default memo(ButtonIcon);
