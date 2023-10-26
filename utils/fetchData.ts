@@ -8,7 +8,7 @@ export const fetchData = async ({ url, options }: FetchDataProps) => {
     const res = await fetch(url, options);
     if (!res.ok) {
       const data = await res.json();
-      throw new Error(data.error || "Something went wrong! 🙁");
+      throw new Error(data.error.message || "Something went wrong! 🙁");
     }
     return res;
   } catch (error) {
