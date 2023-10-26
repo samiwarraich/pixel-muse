@@ -1,4 +1,5 @@
 import { IPhoto, IError } from "@/types";
+import { fetchData } from "@/utils/fetchData";
 
 interface GetPhotoProps {
   isClient?: boolean;
@@ -16,32 +17,30 @@ export const getPhoto = async ({
     ? process.env.NEXT_PUBLIC_WEB_HASH
     : process.env.WEB_HASH;
 
-  const data = { isClient, newColors, randValue };
-  try {
-    const res = await fetch(url as string, {
+  const headers: HeadersInit = {
+    "Content-Type": "application/json",
+  };
+
+  if (hash) {
+    headers["web-hash"] = hash;
+  }
+
+  const res = await fetchData({
+    url: url as string,
+    options: {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "web-hash": hash as string,
-      },
+      headers,
       next: {
         revalidate: 1,
       },
-      body: JSON.stringify(data),
-    });
-    if (res.status === 429)
-      return {
-        error: "🚦Slow down! Too many requests. Try again later. ⏳",
-      };
-    if (!res.ok) return { error: "Something went wrong! 🙁" };
-    const { image, colors, rand } = await res.json();
-    return {
-      image,
-      colors,
-      rand,
-    };
-  } catch (error) {
-    console.error(error);
-    return { error: "Something went wrong! 🙁" };
+      body: JSON.stringify({ isClient, newColors, randValue }),
+    },
+  });
+
+  if ("error" in res) {
+    return res;
   }
+
+  const { image, colors, rand } = await res.json();
+  return { image, colors, rand };
 };
