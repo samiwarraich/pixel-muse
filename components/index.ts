@@ -11,3 +11,4 @@ export { default as ColorPicker } from "./ColorPicker";
 export { default as MSClarity } from "./MSClarity";
 export { default as Lottie } from "./Lottie";
 export { default as Analytics } from "./Analytics";
+export { default as Image } from "./Image";

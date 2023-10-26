@@ -1,5 +1,5 @@
 import { memo } from "react";
-import Image from "next/image";
+import { Image } from "@/components";
 import Link from "next/link";
 import { IBot } from "@/types";
 
@@ -24,13 +24,7 @@ function CardItem({
         draggable={false}
       >
         <div className="relative h-52 w-full">
-          <Image
-            className="object-cover pointer-events-none select-none"
-            src={image}
-            alt={imageAlt}
-            fill
-            priority
-          />
+          <Image src={image} alt={imageAlt} />
         </div>
         <div className="px-6 py-4">
           <div className="font-bold text-xl mb-2">{title}</div>

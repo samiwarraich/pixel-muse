@@ -1,6 +1,5 @@
 "use client";
 import { useRef, useState } from "react";
-import Image from "next/image";
 import { FiDownload, FiRefreshCw } from "react-icons/fi";
 import { usePhoto } from "@/hooks";
 import {
@@ -9,6 +8,7 @@ import {
   ColorPickerIcon,
   ButtonIcon,
   ColorPicker,
+  Image,
 } from "@/components";
 import { IError, IPhoto } from "@/types";
 import { isPhoto, setClarity } from "@/utils";
@@ -74,9 +74,6 @@ function ImageCard({ photo }: ImageCardProps) {
             alt={`A random pixel image with colors: ${colors
               .map((color) => color.hex)
               .join(", ")}`}
-            fill
-            priority
-            className="object-cover pointer-events-none select-none"
           />
         )}
       </div>

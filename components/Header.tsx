@@ -1,6 +1,6 @@
 import { memo } from "react";
 import Link from "next/link";
-import Image from "next/image";
+import { Image } from "@/components";
 import { socialLinks } from "@/utils";
 import { ISocialLink } from "@/types";
 
@@ -13,13 +13,7 @@ function Header() {
         draggable={false}
       >
         <div className="relative h-12 w-12 rounded-full overflow-hidden">
-          <Image
-            className="object-cover pointer-events-none select-none"
-            src="/images/pixel-muse-bot.png"
-            alt="Pixel Muse Bot"
-            fill
-            priority
-          />
+          <Image src="/images/pixel-muse-bot.png" alt="Pixel Muse Bot" />
         </div>
         <div className="text-xl font-bold">Pixel Muse</div>
       </Link>
