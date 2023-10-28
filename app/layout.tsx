@@ -2,7 +2,7 @@ import "@/styles/globals.css";
 import { Header, Footer, MSClarity, Analytics } from "@/components";
 import { firaCode } from "@/utils";
 
-export { metadata } from "@/utils";
+export { metadata, viewport } from "@/utils";
 
 interface RootLayoutProps {
   children: React.ReactNode;
