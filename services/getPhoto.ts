@@ -13,26 +13,24 @@ export const getPhoto = async ({
   randValue,
 }: GetPhotoProps): Promise<IPhoto | IError> => {
   const { BOT_URL, WEB_HASH } = config;
+
   const headers: HeadersInit = {
     "Content-Type": "application/json",
     "web-hash": WEB_HASH,
   };
 
-  const res = await fetchData({
-    url: BOT_URL,
-    options: {
-      method: "POST",
-      headers,
-      next: {
-        revalidate: 1,
-      },
-      body: JSON.stringify({ isClient, newColors, randValue }),
+  const options = {
+    method: "POST",
+    headers,
+    next: {
+      revalidate: 1,
     },
-  });
+    body: JSON.stringify({ isClient, newColors, randValue }),
+  };
 
-  if ("error" in res) {
-    return res;
-  }
+  const res = await fetchData({ url: BOT_URL, options });
+
+  if ("error" in res) return res;
 
   const { image, colors, rand } = await res.json();
   return { image, colors, rand };
