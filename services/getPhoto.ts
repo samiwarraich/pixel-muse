@@ -12,10 +12,8 @@ export const getPhoto = async ({
   newColors,
   randValue,
 }: GetPhotoProps): Promise<IPhoto | IError> => {
-  const url = isClient ? process.env.NEXT_PUBLIC_BOT_URL : process.env.BOT_URL;
-  const hash = isClient
-    ? process.env.NEXT_PUBLIC_WEB_HASH
-    : process.env.WEB_HASH;
+  const url = process.env.NEXT_PUBLIC_BOT_URL;
+  const hash = process.env.NEXT_PUBLIC_WEB_HASH;
 
   const headers: HeadersInit = {
     "Content-Type": "application/json",
