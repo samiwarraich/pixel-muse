@@ -1,7 +1,8 @@
 import Script from "next/script";
+import { config } from "@/utils";
 
 const MSClarity = () => {
-  const MS_CLARITY = process.env.NEXT_PUBLIC_MS_CLARITY;
+  const { MS_CLARITY } = config;
   if (!MS_CLARITY) return null;
   return (
     <>

@@ -1,8 +1,10 @@
 import { MetadataRoute } from "next";
+import { config } from "@/utils";
 
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl = process.env.NEXT_PUBLIC_VERCEL_URL
-    ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
+  const { VERCEL_URL } = config;
+  const baseUrl = VERCEL_URL
+    ? `https://${VERCEL_URL}`
     : "http://localhost:3000";
 
   return {

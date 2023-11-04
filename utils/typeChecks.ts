@@ -1,4 +1,4 @@
-import { IPhoto, IConfig, IError } from "@/types";
+import { IPhoto, IEdgeConfig, IError } from "@/types";
 
 export const isPhoto = (photo: IPhoto | IError): photo is IPhoto => {
   if (!photo) return false;
@@ -11,9 +11,13 @@ export const isPhoto = (photo: IPhoto | IError): photo is IPhoto => {
   );
 };
 
-export const isConfig = (config: IConfig | IError): config is IConfig => {
-  if (!config) return false;
+export const isEdgeConfig = (
+  edgeConfig: IEdgeConfig | IError
+): edgeConfig is IEdgeConfig => {
+  if (!edgeConfig) return false;
   return (
-    "bots" in config && Array.isArray(config.bots) && config.bots.length > 0
+    "bots" in edgeConfig &&
+    Array.isArray(edgeConfig.bots) &&
+    edgeConfig.bots.length > 0
   );
 };

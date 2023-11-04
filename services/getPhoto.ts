@@ -1,5 +1,5 @@
 import { IPhoto, IError } from "@/types";
-import { fetchData } from "@/utils/fetchData";
+import { fetchData, config } from "@/utils";
 
 interface GetPhotoProps {
   isClient?: boolean;
@@ -12,19 +12,14 @@ export const getPhoto = async ({
   newColors,
   randValue,
 }: GetPhotoProps): Promise<IPhoto | IError> => {
-  const url = process.env.NEXT_PUBLIC_BOT_URL;
-  const hash = process.env.NEXT_PUBLIC_WEB_HASH;
-
+  const { BOT_URL, WEB_HASH } = config;
   const headers: HeadersInit = {
     "Content-Type": "application/json",
+    "web-hash": WEB_HASH,
   };
 
-  if (hash) {
-    headers["web-hash"] = hash;
-  }
-
   const res = await fetchData({
-    url: url as string,
+    url: BOT_URL,
     options: {
       method: "POST",
       headers,

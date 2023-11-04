@@ -17,7 +17,7 @@ interface IBot {
   ariaLabel: string;
 }
 
-interface IConfig {
+interface IEdgeConfig {
   bots: IBot[];
 }
 
@@ -31,4 +31,19 @@ interface IError {
   error: string;
 }
 
-export { type ISocialLink, type IBot, type IConfig, type IPhoto, type IError };
+interface IConfig {
+  VERCEL_URL: string;
+  BOT_URL: string;
+  WEB_HASH: string;
+  EDGE_CONFIG: string;
+  MS_CLARITY: string;
+}
+
+export {
+  type ISocialLink,
+  type IBot,
+  type IEdgeConfig,
+  type IPhoto,
+  type IError,
+  type IConfig,
+};

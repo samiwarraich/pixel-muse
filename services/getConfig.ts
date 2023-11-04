@@ -1,8 +1,9 @@
-import { IConfig, IError } from "@/types";
-import { fetchData } from "@/utils/fetchData";
+import { IEdgeConfig, IError } from "@/types";
+import { fetchData, config } from "@/utils";
 
-export const getConfig = async (): Promise<IConfig | IError> => {
-  const res = await fetchData({ url: process.env.EDGE_CONFIG as string });
+export const getConfig = async (): Promise<IEdgeConfig | IError> => {
+  const { EDGE_CONFIG } = config;
+  const res = await fetchData({ url: EDGE_CONFIG });
 
   if ("error" in res) {
     return res;
