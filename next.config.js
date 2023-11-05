@@ -1,8 +1,4 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  images: {
-    remotePatterns: [{ hostname: "pixel-muse.vercel.app" }],
-  },
-};
+const nextConfig = {};
 
 module.exports = nextConfig;
