@@ -31,19 +31,10 @@ interface IError {
   error: string;
 }
 
-interface IConfig {
-  VERCEL_URL: string;
-  BOT_URL: string;
-  WEB_HASH: string;
-  EDGE_CONFIG: string;
-  MS_CLARITY: string;
-}
-
 export {
   type ISocialLink,
   type IBot,
   type IEdgeConfig,
   type IPhoto,
   type IError,
-  type IConfig,
 };

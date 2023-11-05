@@ -1,4 +1,10 @@
-import { IConfig } from "@/types";
+interface IConfig {
+  VERCEL_URL: string;
+  BOT_URL: string;
+  WEB_HASH: string;
+  EDGE_CONFIG: string;
+  MS_CLARITY: string;
+}
 
 export const config: IConfig = {
   VERCEL_URL: process.env.NEXT_PUBLIC_VERCEL_URL as string,
