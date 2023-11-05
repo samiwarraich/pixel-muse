@@ -9,7 +9,7 @@ const Header = () => {
     <header className="flex items-center justify-between pb-4 md:pb-6 lg:pb-8 xl:pb-8 mx-4 md:mx-6 lg:mx-8 xl:mx-8">
       <Link
         href="/"
-        className="flex items-center space-x-2 focus:outline-none select-none"
+        className="flex items-center space-x-2 focus:outline-none"
         draggable={false}
       >
         <div className="relative h-12 w-12 rounded-full overflow-hidden">
@@ -26,7 +26,7 @@ const Header = () => {
                 key={link}
                 href={link}
                 target="_blank"
-                className={`transition-all duration-200 hover:scale-125 focus-within:shadow-lg focus-within:scale-125 focus:outline-none select-none`}
+                className={`transition-all duration-200 hover:scale-125 focus-within:shadow-lg focus-within:scale-125 focus:outline-none`}
                 aria-label={link}
                 draggable={false}
               >

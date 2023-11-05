@@ -20,7 +20,7 @@ const CardItem = ({
       <Link
         target="_blank"
         href={url}
-        className="focus:outline-none select-none"
+        className="focus:outline-none"
         draggable={false}
       >
         <div className="relative h-52 w-full">

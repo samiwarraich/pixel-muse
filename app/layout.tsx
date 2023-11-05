@@ -11,7 +11,7 @@ interface RootLayoutProps {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en" className={`${firaCode.variable} font-fira-code`}>
-      <body>
+      <body className="select-none">
         <main className="container mx-auto m-4 h-screen">
           <Header />
           {children}

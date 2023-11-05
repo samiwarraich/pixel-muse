@@ -12,7 +12,7 @@ interface ImageProps extends Omit<NextImageProps, "alt"> {
 const Image = ({
   src,
   alt = "",
-  className = "object-cover pointer-events-none select-none",
+  className = "object-cover pointer-events-none",
   fill = true,
   priority = true,
   ...props
