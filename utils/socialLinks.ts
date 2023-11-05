@@ -1,6 +1,6 @@
-import { ISocialLink } from "@/types";
 import { FaLink, FaGithub } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
+import { ISocialLink } from "@/types";
 
 export const socialLinks: ISocialLink[] = [
   {

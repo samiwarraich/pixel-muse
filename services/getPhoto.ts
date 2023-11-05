@@ -1,5 +1,5 @@
-import { IPhoto, IError } from "@/types";
 import { fetchData, config } from "@/utils";
+import { IPhoto, IError } from "@/types";
 
 interface GetPhotoProps {
   isClient?: boolean;
