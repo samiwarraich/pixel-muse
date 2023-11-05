@@ -1,2 +1,2 @@
-export * from "./getConfig";
+export * from "./getEdgeConfig";
 export * from "./getPhoto";

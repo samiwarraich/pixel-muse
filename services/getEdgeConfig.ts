@@ -1,7 +1,7 @@
 import { IEdgeConfig, IError } from "@/types";
 import { fetchData, config } from "@/utils";
 
-export const getConfig = async (): Promise<IEdgeConfig | IError> => {
+export const getEdgeConfig = async (): Promise<IEdgeConfig | IError> => {
   const { EDGE_CONFIG } = config;
   const res = await fetchData({ url: EDGE_CONFIG });
 
