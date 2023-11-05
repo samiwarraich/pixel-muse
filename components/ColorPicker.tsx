@@ -1,26 +1,22 @@
-"use client";
 import { memo } from "react";
-import { Color, ColorPicker as RColorPicker } from "react-color-palette";
+import { IColor, ColorPicker as RColorPicker } from "react-color-palette";
 
 interface ColorPickerProps {
   show: boolean;
   color: any;
-  setColor: (color: Color) => void;
-  width: number;
+  setColor: (color: IColor) => void;
 }
 
-const ColorPicker = ({ show, color, setColor, width }: ColorPickerProps) => {
+const ColorPicker = ({ show, color, setColor }: ColorPickerProps) => {
   if (!show) return null;
 
   return (
     <RColorPicker
-      width={width}
       height={190}
       color={color}
       onChange={setColor}
-      hideHSV
-      hideRGB
-      dark
+      hideAlpha
+      hideInput={["hsv", "rgb"]}
     />
   );
 };

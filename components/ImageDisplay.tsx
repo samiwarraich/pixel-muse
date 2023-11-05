@@ -2,16 +2,15 @@ import { memo } from "react";
 import { ErrorMsg, Loader, ColorPicker, Image } from "@/components";
 import { IPhoto, IError } from "@/types";
 import { isPhoto } from "@/utils";
-import { Color } from "react-color-palette";
+import { IColor } from "react-color-palette";
 
 interface ImageDisplayProps {
   isLoading: boolean;
   error: string;
   photo: IPhoto | IError;
   showColorPickers: boolean[];
-  colors: Color[];
-  imageCardRef: React.RefObject<HTMLDivElement>;
-  setColors: (value: React.SetStateAction<Color[]>) => void;
+  colors: IColor[];
+  setColors: (value: React.SetStateAction<IColor[]>) => void;
   imgUrl: string;
 }
 
@@ -21,7 +20,6 @@ const ImageDisplay = ({
   photo,
   showColorPickers,
   colors,
-  imageCardRef,
   setColors,
   imgUrl,
 }: ImageDisplayProps) => {
@@ -34,7 +32,6 @@ const ImageDisplay = ({
       showColorPickers[index] ? (
         <ColorPicker
           key={index}
-          width={imageCardRef?.current?.offsetWidth || 0}
           show={showColorPickers[index]}
           color={color}
           setColor={(newColor) =>

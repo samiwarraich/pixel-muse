@@ -1,5 +1,5 @@
 "use client";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { ImageDisplay, ImageActionPanel } from "@/components";
 import { usePhoto } from "@/hooks";
 import { IError, IPhoto } from "@/types";
@@ -10,7 +10,6 @@ interface ImageCardProps {
 }
 
 const ImageCard = ({ photo }: ImageCardProps) => {
-  const imageCardRef = useRef<HTMLDivElement>(null);
   const [buttonPressed, setButtonPressed] = useState("");
   const {
     imgUrl,
@@ -33,10 +32,7 @@ const ImageCard = ({ photo }: ImageCardProps) => {
   const isDisabled = !!error || isLoading;
 
   return (
-    <div
-      ref={imageCardRef}
-      className="max-w-sm rounded-lg overflow-hidden shadow-md hover:shadow-lg backdrop-brightness-125 border border-custom-card-border"
-    >
+    <div className="max-w-sm rounded-lg overflow-hidden shadow-md hover:shadow-lg backdrop-brightness-125 border border-custom-card-border">
       <div className="relative h-80 w-full">
         <ImageDisplay
           isLoading={isLoading}
@@ -44,7 +40,6 @@ const ImageCard = ({ photo }: ImageCardProps) => {
           photo={photo}
           showColorPickers={showColorPickers}
           colors={colors}
-          imageCardRef={imageCardRef}
           setColors={setColors}
           imgUrl={imgUrl}
         />

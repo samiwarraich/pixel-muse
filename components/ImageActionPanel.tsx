@@ -1,7 +1,7 @@
 import { memo } from "react";
 import { FiDownload, FiRefreshCw } from "react-icons/fi";
 import { ButtonIcon, ColorPickerIcon } from "@/components";
-import { Color } from "react-color-palette";
+import { IColor } from "react-color-palette";
 
 interface ImageActionPanelProps {
   handleClick: (clickOn: string, callback: () => void) => void;
@@ -9,7 +9,7 @@ interface ImageActionPanelProps {
   isDisabled: boolean;
   buttonPressed: string;
   isLoading: boolean;
-  colors: Color[];
+  colors: IColor[];
   toggleColorPicker: (index: number) => void;
   onReload: () => Promise<void>;
 }

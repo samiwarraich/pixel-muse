@@ -1,13 +1,13 @@
 import { useState, useCallback, useMemo } from "react";
-import { Color } from "react-color-palette";
+import { IColor } from "react-color-palette";
 
 interface ColorPickerProps {
-  initialColors: Color[];
+  initialColors: IColor[];
 }
 
 const useColorPicker = ({ initialColors }: ColorPickerProps) => {
-  const [colorsHex, setColorsHex] = useState<Color[]>(initialColors);
-  const [colors, setColors] = useState<Color[]>(colorsHex);
+  const [colorsHex, setColorsHex] = useState<IColor[]>(initialColors);
+  const [colors, setColors] = useState<IColor[]>(colorsHex);
   const [showColorPickers, setShowColorPickers] = useState<boolean[]>(
     initialColors.map(() => false)
   );

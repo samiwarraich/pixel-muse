@@ -2,7 +2,7 @@ import { useState, useCallback, useMemo } from "react";
 import { isPhoto } from "@/utils";
 import { getPhoto } from "@/services";
 import { IPhoto, IError } from "@/types";
-import { toColor } from "react-color-palette";
+import { ColorService } from "react-color-palette";
 import { useDownloadImage, useColorPicker } from "@/hooks";
 
 interface UsePhotoProps {
@@ -25,7 +25,7 @@ const usePhoto = ({ photo }: UsePhotoProps) => {
     toggleColorPicker,
   } = useColorPicker({
     initialColors: isPhoto(photo)
-      ? photo.colors.map((color) => toColor("hex", color))
+      ? photo.colors.map((color) => ColorService.convert("hex", color))
       : [],
   });
 
@@ -48,8 +48,11 @@ const usePhoto = ({ photo }: UsePhotoProps) => {
     if (isPhoto(newPhoto)) {
       setImgUrl(newPhoto.image);
       setRand(newPhoto.rand);
-      setColorsHex(newPhoto.colors.map((color) => toColor("hex", color)));
-      setColors(newPhoto.colors.map((color) => toColor("hex", color)));
+      const newColors = newPhoto.colors.map((color) =>
+        ColorService.convert("hex", color)
+      );
+      setColorsHex(newColors);
+      setColors(newColors);
       setShowColorPickers(newPhoto.colors.map(() => false));
     } else {
       setError(newPhoto?.error);
