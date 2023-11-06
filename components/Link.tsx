@@ -7,4 +7,4 @@ const Link: React.FC<NextLinkProps> = ({ draggable = false, ...props }) => (
   <NextLink draggable={draggable} {...props} />
 );
 
-export default memo(Link);
+export default Link;
