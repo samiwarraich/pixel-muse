@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Link } from "@/components";
 
 export default function PrivacyPolicy() {
   return (
@@ -7,7 +7,7 @@ export default function PrivacyPolicy() {
       <h2 className="text-md font-bold my-2">Introduction</h2>
       <p className="text-sm">
         Welcome to{" "}
-        <Link href="/" className="hover:underline" draggable={false}>
+        <Link href="/" className="hover:underline">
           <strong>Pixel Muse</strong>
         </Link>
         . We are committed to respecting and protecting your privacy. This
@@ -69,7 +69,6 @@ export default function PrivacyPolicy() {
         <Link
           href="mailto:samiwarraich51@gmail.com"
           className="hover:underline"
-          draggable={false}
         >
           <strong>contact</strong>
         </Link>{" "}

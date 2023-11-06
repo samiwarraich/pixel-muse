@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Link } from "@/components";
 
 const Footer = () => {
   return (
@@ -8,7 +8,6 @@ const Footer = () => {
           <Link
             href="/privacy-policy"
             className="hover:underline focus:outline-none"
-            draggable={false}
           >
             Privacy
           </Link>
