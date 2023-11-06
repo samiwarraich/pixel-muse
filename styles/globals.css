@@ -131,6 +131,8 @@ body {
 }
 .rcp-field-label {
   font-size: 14px;
+  font-weight: 600;
+  padding-top: 5px;
   text-align: center;
   color: var(--rcp-field-label-color);
 }
