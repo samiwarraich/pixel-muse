@@ -1,4 +1,3 @@
-import { memo } from "react";
 import Link from "next/link";
 import { Image } from "@/components";
 import { socialLinks } from "@/utils";
