@@ -2,18 +2,15 @@ import { MetadataRoute } from "next";
 import { config } from "@/utils";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const { VERCEL_URL } = config;
-  const baseUrl = VERCEL_URL
-    ? `https://${VERCEL_URL}`
-    : "http://localhost:3000";
+  const { BASE_URL } = config;
 
   return [
     {
-      url: baseUrl,
+      url: BASE_URL,
       lastModified: new Date().toISOString(),
     },
     {
-      url: `${baseUrl}/privacy-policy`,
+      url: `${BASE_URL}/privacy-policy`,
       lastModified: new Date().toISOString(),
     },
   ];

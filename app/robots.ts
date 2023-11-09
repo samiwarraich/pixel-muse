@@ -2,17 +2,14 @@ import { MetadataRoute } from "next";
 import { config } from "@/utils";
 
 export default function robots(): MetadataRoute.Robots {
-  const { VERCEL_URL } = config;
-  const baseUrl = VERCEL_URL
-    ? `https://${VERCEL_URL}`
-    : "http://localhost:3000";
+  const { BASE_URL } = config;
 
   return {
     rules: {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: `${baseUrl}/sitemap.xml`,
-    host: baseUrl,
+    sitemap: `${BASE_URL}/sitemap.xml`,
+    host: BASE_URL,
   };
 }
