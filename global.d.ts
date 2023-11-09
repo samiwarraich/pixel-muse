@@ -1,3 +1,3 @@
 interface Window {
-  clarity: any;
+  clarity: (action: string, key: string, value: string | string[]) => void;
 }
