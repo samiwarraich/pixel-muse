@@ -1,8 +1,6 @@
 import { memo } from "react";
-import { ImageCard } from "@/components";
-import { CardItem } from "@/components";
+import { ImageCard, CardItem, ErrorMsg } from "@/components";
 import { IEdgeConfig, IError, IPhoto } from "@/types";
-import { ErrorMsg } from "@/components";
 import { isEdgeConfig } from "@/utils";
 
 interface CardProps {
