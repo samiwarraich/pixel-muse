@@ -1,12 +1,12 @@
 import { memo } from "react";
 
 interface ErrorMsgProps {
-  name: string;
+  type: "image" | "boundary" | "card";
   message: string;
 }
 
-const ErrorMsg = ({ name, message }: ErrorMsgProps) => {
-  if (!name || !message) return null;
+const ErrorMsg = ({ type, message }: ErrorMsgProps) => {
+  if (!type || !message) return null;
 
   const styles: { [key: string]: string } = {
     image: "flex items-center justify-center h-full px-5 text-center",
@@ -14,11 +14,11 @@ const ErrorMsg = ({ name, message }: ErrorMsgProps) => {
     card: "max-w-sm rounded-lg overflow-hidden shadow-md hover:shadow-lg backdrop-brightness-150 px-5 text-center",
   };
 
-  const style = styles[name];
+  const style = styles[type];
 
   return (
     <div className={style}>
-      {name === "card" ? (
+      {type === "card" ? (
         <div className="relative h-80 w-full">
           <div className="flex items-center justify-center h-full">
             <p>{message}</p>

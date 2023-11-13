@@ -25,7 +25,7 @@ const ImageDisplay = ({
 }: ImageDisplayProps) => {
   if (isLoading) return <Loader height={"70%"} width={"70%"} />;
   if (error || !isPhoto(photo))
-    return <ErrorMsg name="image" message={error || (photo as IError).error} />;
+    return <ErrorMsg type="image" message={error || (photo as IError).error} />;
 
   if (showColorPickers.some((showColorPicker) => showColorPicker)) {
     return colors.map((color, index) =>

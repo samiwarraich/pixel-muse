@@ -6,7 +6,7 @@ export default async function Home() {
   const data = await getEdgeConfig();
   const photo = await getPhoto({ isClient: true });
   if (!isEdgeConfig(data) && !isPhoto(photo)) {
-    return <ErrorMsg name="boundary" message={data.error || photo.error} />;
+    return <ErrorMsg type="boundary" message={data.error || photo.error} />;
   }
 
   return (
