@@ -1,12 +1,3 @@
-import { IconType } from "react-icons";
-
-interface ISocialLink {
-  link: string;
-  title: string;
-  icon: IconType;
-  iconSize: number;
-}
-
 interface IBot {
   title: string;
   username: string;
@@ -31,10 +22,4 @@ interface IError {
   error: string;
 }
 
-export {
-  type ISocialLink,
-  type IBot,
-  type IEdgeConfig,
-  type IPhoto,
-  type IError,
-};
+export { type IBot, type IEdgeConfig, type IPhoto, type IError };

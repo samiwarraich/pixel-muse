@@ -1,6 +1,13 @@
 import { FaLink, FaGithub } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
-import { ISocialLink } from "@/types";
+import { IconType } from "react-icons";
+
+interface ISocialLink {
+  link: string;
+  title: string;
+  icon: IconType;
+  iconSize: number;
+}
 
 export const socialLinks: ISocialLink[] = [
   {

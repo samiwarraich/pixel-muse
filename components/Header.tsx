@@ -1,6 +1,5 @@
 import { Link, Image } from "@/components";
 import { socialLinks } from "@/utils";
-import { ISocialLink } from "@/types";
 
 const Header = () => {
   return (
@@ -12,22 +11,20 @@ const Header = () => {
         <div className="text-xl font-bold">Pixel Muse</div>
       </Link>
       <div className="flex space-x-4">
-        {socialLinks.map(
-          ({ link, title, icon: Icon, iconSize }: ISocialLink) => {
-            return (
-              <Link
-                title={title}
-                key={link}
-                href={link}
-                target="_blank"
-                className={`transition-all duration-200 hover:scale-125 focus-within:shadow-lg focus-within:scale-125 focus:outline-none`}
-                aria-label={link}
-              >
-                <Icon size={iconSize} />
-              </Link>
-            );
-          }
-        )}
+        {socialLinks.map(({ link, title, icon: Icon, iconSize }) => {
+          return (
+            <Link
+              title={title}
+              key={link}
+              href={link}
+              target="_blank"
+              className={`transition-all duration-200 hover:scale-125 focus-within:shadow-lg focus-within:scale-125 focus:outline-none`}
+              aria-label={link}
+            >
+              <Icon size={iconSize} />
+            </Link>
+          );
+        })}
       </div>
     </header>
   );
