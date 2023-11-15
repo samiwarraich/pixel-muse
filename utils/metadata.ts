@@ -49,6 +49,7 @@ export const metadata: Metadata = {
     "google-site-verification": "hztt4vcG42duVjOSpid_W9ugB5xznC01VRcutNPlBpI",
     "msvalidate.01": "DD992E9CC85A0E458EA3599D0526C78A",
     "p:domain_verify": "5d40bb6cf120718969b9be1519543e7e",
+    "yandex-verification": "69c311bc88f7a5d1",
   },
   icons: [
     {
