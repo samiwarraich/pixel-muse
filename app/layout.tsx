@@ -1,5 +1,11 @@
 import "@/styles/globals.css";
-import { Header, Footer, MSClarity, Analytics } from "@/components";
+import {
+  Header,
+  Footer,
+  MSClarity,
+  Analytics,
+  SpeedInsights,
+} from "@/components";
 import { firaCode } from "@/utils";
 
 export { metadata, viewport } from "@/utils";
@@ -16,6 +22,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           <Header />
           {children}
           <Analytics />
+          <SpeedInsights />
           <MSClarity />
           <Footer />
         </main>

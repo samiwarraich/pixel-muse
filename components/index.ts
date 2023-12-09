@@ -15,3 +15,4 @@ export { default as Image } from "./Image";
 export { default as ImageDisplay } from "./ImageDisplay";
 export { default as ImageActionPanel } from "./ImageActionPanel";
 export { default as Link } from "./Link";
+export { default as SpeedInsights } from "./SpeedInsights";
