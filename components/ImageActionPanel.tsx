@@ -37,7 +37,7 @@ const ImageActionPanel = ({
       <div className="flex justify-center items-center">
         {colors.map((color, index) => (
           <ColorPickerIcon
-            key={color.hex}
+            key={index}
             color={color.hex}
             pickerIndex={index}
             toggle={toggleColorPicker}
