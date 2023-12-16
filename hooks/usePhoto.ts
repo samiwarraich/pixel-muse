@@ -14,7 +14,7 @@ const usePhoto = ({ photo }: UsePhotoProps) => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(!isPhoto(photo) ? photo.error : "");
   const [rand, setRand] = useState(isPhoto(photo) ? photo.rand : 1);
-  const { downloadImage } = useDownloadImage({ setError, setIsLoading });
+  const { downloadImage } = useDownloadImage({ setError });
   const {
     colors,
     setColors,
