@@ -11,7 +11,7 @@ interface ISocialLink {
 
 export const socialLinks: ISocialLink[] = [
   {
-    link: "https://samiwarraich.github.io",
+    link: "https://sami.warraich.co",
     title: "Portfolio",
     icon: FaLink,
     iconSize: 16,
