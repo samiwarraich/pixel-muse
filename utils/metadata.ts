@@ -68,5 +68,5 @@ export const metadata: Metadata = {
     },
   ],
   manifest: "/manifest.webmanifest",
-  authors: [{ name: "Sami Warraich", url: "https://samiwarraich.github.io" }],
+  authors: [{ name: "Sami Warraich", url: "https://sami.warraich.co" }],
 };
