@@ -17,7 +17,7 @@ export const socialLinks: ISocialLink[] = [
     iconSize: 16,
   },
   {
-    link: "https://twitter.com/samiwarra1ch",
+    link: "https://x.com/samiwarra1ch",
     title: "X",
     icon: FaXTwitter,
     iconSize: 16,
