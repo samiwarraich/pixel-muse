@@ -6,7 +6,7 @@ import {
   Analytics,
   SpeedInsights,
 } from "@/components";
-import { firaCode } from "@/utils";
+import { robotoMono } from "@/utils";
 
 export { metadata, viewport } from "@/utils";
 
@@ -16,7 +16,7 @@ interface RootLayoutProps {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="en" className={`${firaCode.variable} font-fira-code`}>
+    <html lang="en" className={`${robotoMono.variable} font-mono`}>
       <body className="select-none">
         <main className="container mx-auto m-4 h-screen">
           <Header />

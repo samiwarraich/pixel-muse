@@ -8,7 +8,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        "fira-code": ["var(--font-fira-code)"],
+        mono: ["var(--font-roboto-mono)"],
       },
       borderColor: {
         "custom-border": "rgb(var(--foreground-rgb))",
