@@ -11,7 +11,7 @@ interface CardProps {
 const Card = ({ data, photo }: CardProps) => {
   return (
     <div className="min-h-screen w-full">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4 gap-4 md:gap-6 lg:gap-8 xl:gap-8 mx-4 md:mx-6 lg:mx-8 xl:mx-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4 gap-4 md:gap-6 lg:gap-8 xl:gap-8 mx-4 md:mx-6 lg:mx-8 xl:mx-8 justify-items-center">
         <ImageCard photo={photo} />
         {!isEdgeConfig(data) ? (
           <ErrorMsg type="card" message={data.error} />
