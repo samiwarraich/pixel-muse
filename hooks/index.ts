@@ -1,3 +1,3 @@
-export { default as useDownloadImage } from "./useDownloadImage";
-export { default as useColorPicker } from "./useColorPicker";
-export { default as usePhoto } from "./usePhoto";
+export { default as useDownloadImage } from "@/hooks/useDownloadImage";
+export { default as useColorPicker } from "@/hooks/useColorPicker";
+export { default as usePhoto } from "@/hooks/usePhoto";

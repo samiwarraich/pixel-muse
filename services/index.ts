@@ -1,2 +1,2 @@
-export * from "./getEdgeConfig";
-export * from "./getPhoto";
+export * from "@/services/getEdgeConfig";
+export * from "@/services/getPhoto";
