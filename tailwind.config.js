@@ -11,8 +11,8 @@ module.exports = {
         mono: ["var(--font-roboto-mono)"],
       },
       borderColor: {
-        "custom-border": "rgb(var(--foreground-rgb))",
-        "custom-card-border": "rgb(var(--card-border))",
+        default: "rgb(var(--color-border))",
+        light: "rgb(var(--color-text))",
       },
     },
   },

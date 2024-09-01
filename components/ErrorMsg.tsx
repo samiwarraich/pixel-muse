@@ -11,7 +11,7 @@ const ErrorMsg = ({ type, message }: ErrorMsgProps) => {
   const styles: { [key: string]: string } = {
     image: "flex items-center justify-center h-full px-5 text-center",
     boundary: "flex justify-center items-center h-3/4 text-xl",
-    card: "max-w-sm rounded-lg overflow-hidden shadow-md hover:shadow-lg px-5 text-center backdrop-brightness-125 border border-custom-card-border",
+    card: "max-w-sm rounded-lg overflow-hidden shadow-md hover:shadow-lg px-5 text-center backdrop-brightness-125 border border-default",
   };
 
   const style = styles[type];

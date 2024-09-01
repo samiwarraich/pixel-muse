@@ -5,7 +5,7 @@ export default function PrivacyPolicy() {
     <div className="max-w-2xl mx-auto px-6 py-8">
       <div className="space-y-6">
         <h1 className="text-xl font-bold mb-4 text-center">Privacy Policy</h1>
-        <hr className="border-custom-card-border" />
+        <hr className="border-default" />
         <section>
           <h2 className="text-md font-bold mb-2">Introduction</h2>
           <p className="text-sm">

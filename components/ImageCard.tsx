@@ -32,7 +32,7 @@ const ImageCard = ({ photo }: ImageCardProps) => {
   const isDisabled = !!error || isLoading;
 
   return (
-    <div className="w-full max-w-sm rounded-lg overflow-hidden shadow-md hover:shadow-lg backdrop-brightness-125 border border-custom-card-border">
+    <div className="w-full max-w-sm rounded-lg overflow-hidden shadow-md hover:shadow-lg backdrop-brightness-125 border border-default">
       <div className="relative h-80 w-full">
         <ImageDisplay
           isLoading={isLoading}
