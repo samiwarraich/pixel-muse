@@ -44,6 +44,10 @@ body {
   user-select: none;
   touch-action: none;
 }
+.rcp-interactive[aria-disabled="true"] {
+  cursor: unset;
+  pointer-events: none;
+}
 .rcp-saturation {
   cursor: pointer;
   width: 100%;
@@ -128,6 +132,9 @@ body {
   border-radius: 5px;
   outline: none;
   padding: 5px 0;
+}
+.rcp-field-input:read-only {
+  opacity: 0.8;
 }
 .rcp-field-label {
   font-size: 14px;
