@@ -8,8 +8,8 @@ export default function manifest(): MetadataRoute.Manifest {
       "Pixel Muse is a suite of bots that create and share random color pixel images on Twitter and Telegram platforms. You can enjoy these beautiful images every day by following the bots on social media or requesting them via messages or mentions.",
     start_url: "/",
     display: "standalone",
-    background_color: "transparent",
-    theme_color: "red",
+    background_color: "#ffffff",
+    theme_color: "transparent",
     icons: [
       {
         src: "/images/favicon.png",
