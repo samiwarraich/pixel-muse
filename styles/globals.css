@@ -3,24 +3,32 @@
 @tailwind utilities;
 
 :root {
-  --color-background: 21, 23, 24;
-  --color-text: 155, 161, 165;
-  --color-border: 50, 55, 58;
+  --background-color: 255, 255, 255;
+  --foreground-color: 102, 102, 102;
+  --border-color: 201, 201, 201;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: 0, 0, 0;
+    --foreground-color: 161, 161, 161;
+    --border-color: 69, 69, 69;
+  }
 }
 
 body {
-  background-color: rgb(var(--color-background));
-  color: rgb(var(--color-text));
+  background-color: rgb(var(--background-color));
+  color: rgb(var(--foreground-color));
 }
 
 /* Color Picker Start */
 
 .rcp-root {
   --rcp-background-color: transparent;
-  --rcp-field-input-color: rgb(var(--color-text));
-  --rcp-field-input-border-color: rgb(var(--color-text));
-  --rcp-field-label-color: rgb(var(--color-text));
-  --rcp-cursor-border-color: rgb(var(--color-text));
+  --rcp-field-input-color: rgb(var(--foreground-color));
+  --rcp-field-input-border-color: rgb(var(--foreground-color));
+  --rcp-field-label-color: rgb(var(--foreground-color));
+  --rcp-cursor-border-color: rgb(var(--foreground-color));
 }
 .rcp {
   display: flex;

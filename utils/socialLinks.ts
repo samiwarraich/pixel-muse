@@ -14,18 +14,18 @@ export const socialLinks: ISocialLink[] = [
     link: "https://sami.warraich.co",
     title: "Portfolio",
     icon: FaLink,
-    iconSize: 16,
+    iconSize: 18,
   },
   {
     link: "https://x.com/samiwarra1ch",
     title: "X",
     icon: FaXTwitter,
-    iconSize: 16,
+    iconSize: 18,
   },
   {
     link: "https://github.com/samiwarraich",
     title: "Github",
     icon: FaGithub,
-    iconSize: 16,
+    iconSize: 18,
   },
 ];

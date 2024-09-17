@@ -10,9 +10,11 @@ module.exports = {
       fontFamily: {
         mono: ["var(--font-roboto-mono)"],
       },
+      colors: {
+        foreground: "rgb(var(--foreground-color))",
+      },
       borderColor: {
-        default: "rgb(var(--color-border))",
-        light: "rgb(var(--color-text))",
+        default: "rgb(var(--border-color))",
       },
     },
   },
