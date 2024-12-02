@@ -2858,11 +2858,12 @@ react-is@^16.13.1:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
 
-react-lottie@^1.2.9:
-  version "1.2.9"
-  resolved "https://registry.yarnpkg.com/react-lottie/-/react-lottie-1.2.9.tgz#d4ae7778c5a5ee421ae775b976e25fe962058839"
-  integrity sha512-3qOazGM5/r+q7D3+kfPE7injsIAm42zkc1AjCFDXLz8RGrDrP5cQhTdeZ4k33s8ewTQqKtyfFuO1iyR1C1pOTA==
+react-lottie@^1.2.10:
+  version "1.2.10"
+  resolved "https://registry.yarnpkg.com/react-lottie/-/react-lottie-1.2.10.tgz#399f78a448a7833b2380d74fc489ecf15f8d18c7"
+  integrity sha512-x0eWX3Z6zSx1XM5QSjnLupc6D22LlMCB0PH06O/N/epR2hsLaj1Vxd9RtMnbbEHjJ/qlsgHJ6bpN3vnZI92hjw==
   dependencies:
+    babel-runtime "^6.26.0"
     lottie-web "^5.12.2"
     prop-types "^15.6.1"
 
